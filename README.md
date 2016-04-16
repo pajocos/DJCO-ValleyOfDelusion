@@ -1,7 +1,7 @@
 ## DJCO-ValleyOfDelusion
 DJCO Final Project - Valley Of Delusion
 
-Game developed in Unity3D. Check [wiki](https://github.com/pajocos/DJCO-ValleyOfDelusion/wiki) for more info.
+Game developed in Unity3D. Check [wiki](https://paginas.fe.up.pt/~ei12019/ValleyOfDellusion/doku.php?id=start) for more info.
 
 ####Team
 ######MIEIC
