@@ -114,9 +114,10 @@ using System.Collections;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 10f;
+    public float angularSpeed = 10f;
     public float tilt;
     Rigidbody rigidbody;
-
+    private float sum=0;
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
@@ -127,11 +128,13 @@ public class PlayerMovement : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(0.0f, 0.0f, moveVertical);
-        rigidbody.velocity = movement * speed;
+        sum += moveHorizontal * angularSpeed * Time.deltaTime;
+        Vector3 movement = new Vector3(Mathf.Sin((sum*Mathf.PI)/180), 0.0f, Mathf.Cos((Mathf.PI*sum)/180));
+        
+        rigidbody.velocity = movement * speed * moveVertical;
 
         rigidbody.position = rigidbody.position + rigidbody.velocity * Time.deltaTime;
 
-        rigidbody.rotation = Quaternion.Euler(moveHorizontal, moveHorizontal, moveHorizontal);
+        rigidbody.rotation = Quaternion.Euler(0f, sum, 0f);
     }
 }
