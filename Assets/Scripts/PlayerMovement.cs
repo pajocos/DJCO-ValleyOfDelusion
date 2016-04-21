@@ -5,7 +5,12 @@ public class PlayerMovement : MonoBehaviour
 {
     public float Speed = 10f;
     public float AngularSpeed = 10f;
-    public float JumpForce = 1000f;
+
+
+    public float JumpDistance = 1000f;
+    public float JumpSpeed = 10f;
+    private bool jumping = false;
+
     Rigidbody rigidbody;
     
     private float sum=0;
@@ -34,18 +39,36 @@ public class PlayerMovement : MonoBehaviour
         rigidbody.position = rigidbody.position + rigidbody.velocity * Time.deltaTime;
 
         rigidbody.rotation = Quaternion.Euler(0f, sum, 0f);
+        
 
         if (Input.GetButtonDown("Jump") && grounded)
-            rigidbody.AddForce(Vector3.up * JumpForce);
+            jumping = true;
+
+        MyJump();
     }
 
-    void OnCollisionEnter(Collision col)
+    private void MyJump()
     {
-        if(col.collider.tag == "Floor")
+        if (jumping)
+        {
+            if (transform.position.y >= JumpDistance)
+                jumping = false;
+            else
+                rigidbody.velocity += Vector3.up * JumpSpeed;
+        }
+        else if(!grounded)
+            rigidbody.velocity -= Vector3.up * JumpSpeed;
+    }
+
+
+    void OnCollisionStay(Collision col)
+    {        
+        if(col.collider.tag.Equals("Floor"))
         {
             grounded = true;
         }
-    }
+    }    
+
 
     void OnCollisionExit(Collision col)
     {
