@@ -11,12 +11,10 @@ namespace Assets.Scripts.Utils {
 
 
         private float value;
-        private bool rotation;
         private Vector3 axis;
 
-        public Movement(float val, bool rot, Vector3 axis) {
+        public Movement(float val, Vector3 axis) {
             this.value = val;
-            this.rotation = rot;
             this.axis = axis;
         }
 
@@ -28,9 +26,7 @@ namespace Assets.Scripts.Utils {
             return value;
         }
 
-        public bool isRotation() {
-            return rotation;
-        }
+
     }
 
 }

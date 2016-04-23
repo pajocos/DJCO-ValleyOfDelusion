@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Assets.Scripts.Utils;
+using UnityStandardAssets.Characters.ThirdPerson;
 
 public class EnemyBehavior : MonoBehaviour {
 
@@ -9,79 +10,52 @@ public class EnemyBehavior : MonoBehaviour {
     private int patternIterator = -1;
     private float movementLeft = 0;
     private List<Movement> movementPattern;
-    private float lastAng;
-	// Use this for initialization
-	void Start () {
+    public ThirdPersonCharacter character { get; private set; } // the character we are controlling
 
-        movementPattern = new List<Movement>();
-        movementPattern.Add(new Movement(5f, false, Vector3.left));
-        movementPattern.Add(new Movement(Mathf.PI, true, Vector3.up));
-        movementPattern.Add(new Movement(5f, false, Vector3.right));
-        movementPattern.Add(new Movement(Mathf.PI, true, Vector3.up));
-
-        rgd = GetComponent<Rigidbody>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
-
-
-
-        if (movementLeft > 0) {
-
-           
-
-            if (movementPattern[patternIterator].isRotation()) {
-
-
-                rgd.AddTorque(movementPattern[patternIterator].getAxis(),ForceMode.VelocityChange);
-
-                float ang;
-                Vector3 ve;
-                GetComponent<Transform>().rotation.ToAngleAxis(out ang,out ve);
-                Debug.Log("ang:" + ang + "last:" + lastAng  + "dif" + (ang- lastAng));
-
-                movementLeft -= Time.deltaTime;
-                lastAng = ang;
-            } else {
-
-                rgd.velocity = movementPattern[patternIterator].getAxis() * 2;
-                movementLeft -= Time.deltaTime;
-
-
-
-            }
+    public Transform[] points;
+    private int destPoint = 0;
+    private NavMeshAgent agent;
 
 
 
 
 
+    void Start() {
+        agent = GetComponent<NavMeshAgent>();
+
+        // Disabling auto-braking allows for continuous movement
+        // between points (ie, the agent doesn't slow down as it
+        // approaches a destination point).
+        agent.autoBraking = false;
+        character = GetComponent<ThirdPersonCharacter>();
+        GotoNextPoint();
+    }
 
 
+    void GotoNextPoint() {
+        // Returns if no points have been set up
+        if (points.Length == 0)
+            return;
 
-        } else {
+        // Set the agent to go to the currently selected destination.
 
-            rgd.velocity = Vector3.zero;
-            rgd.angularVelocity = Vector3.zero;
-
-
-
-
-            patternIterator++;
-            if (patternIterator >= movementPattern.Count) {
-                patternIterator = 0;
-            }
-            movementLeft = movementPattern[patternIterator].getValue();
-
-            float ang;
-            Vector3 ve;
-            GetComponent<Transform>().rotation.ToAngleAxis(out ang, out ve);
-
-            lastAng = ang;
-
-        }
+        agent.destination = points[destPoint].position;
 
 
+        
+
+        // Choose the next point in the array as the destination,
+        // cycling to the start if necessary.
+        destPoint = (destPoint + 1) % points.Length;
+    }
+
+
+    void Update() {
+        // Choose the next destination point when the agent gets
+        // close to the current one.
+        character.Move(agent.desiredVelocity, false, false);
+
+        if (agent.remainingDistance < 0.5f)
+            GotoNextPoint();
     }
 }
