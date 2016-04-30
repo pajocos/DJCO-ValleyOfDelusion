@@ -2,7 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using Assets.Scripts.Utils;
-using UnityStandardAssets.Characters.ThirdPerson;
+using Assets.Scripts;
+
 
 public class EnemyBehavior : MonoBehaviour {
 
