@@ -46,7 +46,6 @@ using UnityEngine;
             // read inputs
             float h = Input.GetAxis("Horizontal");
             float v = Input.GetAxis("Vertical");
-            bool crouch = Input.GetKey(KeyCode.C);
 
             // calculate move direction to pass to character
             if (m_Cam != null)
@@ -66,7 +65,7 @@ using UnityEngine;
 #endif
 
             // pass all parameters to the character control script
-            m_Character.Move(m_Move, crouch, m_Jump);
+            m_Character.Move(m_Move,  m_Jump);
             m_Jump = false;
         }
     }

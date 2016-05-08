@@ -54,7 +54,7 @@ public class EnemyBehavior : MonoBehaviour {
     void Update() {
         // Choose the next destination point when the agent gets
         // close to the current one.
-        character.Move(agent.desiredVelocity, false, false);
+        character.Move(agent.desiredVelocity,  false);
 
         if (agent.remainingDistance < 0.5f)
             GotoNextPoint();
