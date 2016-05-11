@@ -7,7 +7,8 @@ public class PlayerMovement : MonoBehaviour
     public float AngularSpeed = 10f;
     public float Gravity = 10f;
 
-    public float JumpSpeed = 10f;
+    public float JumpImpulsion = 10f;
+    private float jumpSpeed = 0;
 
     private Vector3 internalVelocity = Vector3.zero;
 
@@ -20,17 +21,19 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
-        rigidbody.velocity = Vector3.zero;
     }
 
+
+    //turnAngle should be Hor axis
+    //speedInput should be Vert Axis
     public void Move(float turnAngle, float speedInput, bool jump)
     {
         rotationManager(turnAngle);
         movementManager(speedInput);
         jumpManager(jump);
-        
 
-        rigidbody.position = rigidbody.position + internalVelocity * Time.deltaTime;
+        transform.position += internalVelocity * Time.deltaTime + Vector3.up * jumpSpeed * Time.deltaTime;
+           
     }
 
     private void movementManager(float speedInput)
@@ -50,20 +53,30 @@ public class PlayerMovement : MonoBehaviour
     {
         if (jump && grounded)
         {
-            internalVelocity += Vector3.up * JumpSpeed;
-
+            jumpSpeed = JumpImpulsion;
         }
         if (!grounded)
-            internalVelocity -= Vector3.up* Gravity * Time.deltaTime;
+        {
+            jumpSpeed -= Gravity * Time.deltaTime;         
+            //if(internalVelocity.y > 0)
+            //{
+            //    Vector3 ground = transform.position;
+            //    Vector3 maxH = transform.position;
+            //    ground.y = 0;
+            //    maxH.y = JumpSpeed;
+
+            //    Vector3.Lerp(ground, maxH, internalVelocity.y / JumpSpeed);
+            //}
+        }
     }
 
 
-    void OnCollisionStay(Collision col)
+    void OnCollisionEnter(Collision col)
     {        
         if(col.collider.tag.Equals("Floor"))
         {
             grounded = true;
-            internalVelocity = Vector3.zero;
+            jumpSpeed = 0;
         }
     }    
 
