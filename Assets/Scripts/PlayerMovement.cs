@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public float Gravity = 10f;
 
     public float JumpImpulsion = 10f;
-    private float jumpSpeed = 0;
+    public float jumpSpeed = 0;
 
     private Vector3 internalVelocity = Vector3.zero;
 
@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody rigidbody;
     
     private float sum=0;
-    private bool grounded = false;
+    public bool grounded = false;
 
     void Start()
     {
@@ -58,34 +58,9 @@ public class PlayerMovement : MonoBehaviour
         if (!grounded)
         {
             jumpSpeed -= Gravity * Time.deltaTime;         
-            //if(internalVelocity.y > 0)
-            //{
-            //    Vector3 ground = transform.position;
-            //    Vector3 maxH = transform.position;
-            //    ground.y = 0;
-            //    maxH.y = JumpSpeed;
-
-            //    Vector3.Lerp(ground, maxH, internalVelocity.y / JumpSpeed);
-            //}
         }
     }
 
 
-    void OnCollisionEnter(Collision col)
-    {        
-        if(col.collider.tag.Equals("Floor"))
-        {
-            grounded = true;
-            jumpSpeed = 0;
-        }
-    }    
-
-
-    void OnCollisionExit(Collision col)
-    {
-        if (col.collider.tag == "Floor")
-        {
-            grounded = false;
-        }
-    }
+   
 }

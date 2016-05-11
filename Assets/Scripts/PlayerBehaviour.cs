@@ -21,4 +21,23 @@ public class PlayerBehaviour : MonoBehaviour {
         movement.Move(moveHorizontal, moveVertical, jump);
 
     }
+
+
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.collider.tag.Equals("Floor"))
+        {
+            movement.grounded = true;
+            movement.jumpSpeed = 0;
+        }
+    }
+
+
+    void OnCollisionExit(Collision col)
+    {
+        if (col.collider.tag == "Floor")
+        {
+            movement.grounded = false;
+        }
+    }
 }
