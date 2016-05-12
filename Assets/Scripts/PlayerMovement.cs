@@ -14,9 +14,15 @@ public class PlayerMovement : MonoBehaviour
 
 
     Rigidbody rigidbody;
-    
-    private float sum=0;
+
+    private float sum = 0;
     public bool grounded = false;
+    private bool lerpingBack = false;
+    public float lerpTime = 0f;
+
+    public float PUSHBACKTIME = 10f;
+    private Vector3 lerpEndPos;
+    private Vector3 lerpStartPos;
 
     void Start()
     {
@@ -28,12 +34,18 @@ public class PlayerMovement : MonoBehaviour
     //speedInput should be Vert Axis
     public void Move(float turnAngle, float speedInput, bool jump)
     {
-        rotationManager(turnAngle);
-        movementManager(speedInput);
-        jumpManager(jump);
+        if (lerpingBack)
+        {
+            LerpingBack();
+        }
+        else
+        {
+            rotationManager(turnAngle);
+            movementManager(speedInput);
+            jumpManager(jump);
+            transform.position += internalVelocity * Time.deltaTime + Vector3.up * jumpSpeed * Time.deltaTime;
+        }
 
-        transform.position += internalVelocity * Time.deltaTime + Vector3.up * jumpSpeed * Time.deltaTime;
-           
     }
 
     private void movementManager(float speedInput)
@@ -57,10 +69,34 @@ public class PlayerMovement : MonoBehaviour
         }
         if (!grounded)
         {
-            jumpSpeed -= Gravity * Time.deltaTime;         
+            jumpSpeed -= Gravity * Time.deltaTime;
         }
     }
 
 
-   
+
+    private void LerpingBack()
+    {
+        lerpTime += Time.deltaTime;
+        //print("lerptime: "+lerpTime);
+        if (lerpTime <= PUSHBACKTIME)
+            transform.position = Vector3.Lerp(lerpStartPos, lerpEndPos, lerpTime / PUSHBACKTIME);
+        else
+            lerpingBack = false;
+    }
+
+
+    public void PushBack(float distance, Vector3 direction)
+    {
+        lerpingBack = true;
+        lerpTime = 0;
+
+        direction.Normalize();
+        direction *= distance;
+
+        lerpStartPos = transform.position;
+        lerpEndPos = lerpStartPos + direction;
+    }
+
+
 }
