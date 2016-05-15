@@ -62,11 +62,11 @@ public class FixedEnemyBehavior : MonoBehaviour {
     }
 
 
-    void OnCollisionEnter(Collision col)
+    void OnTriggerEnter(Collider col)
     {
-        if (col.collider.tag ==("Player"))
+        if (col.tag ==("Player"))
         {
-            Player.movement.PushBack(10, transform.forward);
+            Player.movement.PushBack(10f, transform.forward);
             attackCollider.enabled = false;
         }
     }
