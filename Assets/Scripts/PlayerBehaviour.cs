@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerBehaviour : MonoBehaviour {
 
-    private CharacterMovement movement;
+    public CharacterMovement movement;
 
 	// Use this for initialization
 	void Start () {
