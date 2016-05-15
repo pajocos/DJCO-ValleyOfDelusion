@@ -3,11 +3,11 @@ using System.Collections;
 
 public class PlayerBehaviour : MonoBehaviour {
 
-    private PlayerMovement movement;
+    private CharacterMovement movement;
 
 	// Use this for initialization
 	void Start () {
-        movement = GetComponent<PlayerMovement>();
+        movement = GetComponent<CharacterMovement>();
 	
 	}
 

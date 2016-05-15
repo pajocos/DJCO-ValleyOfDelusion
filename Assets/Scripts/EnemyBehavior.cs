@@ -10,26 +10,29 @@ public class EnemyBehavior : MonoBehaviour {
     private Rigidbody rgd;
     private int patternIterator = -1;
     private float movementLeft = 0;
-    private List<Movement> movementPattern;
-    public ThirdPersonCharacter character { get; private set; } // the character we are controlling
+    private List<Assets.Scripts.Utils.Movement> movementPattern;
+    //public CharacterMovement movement; // the character we are controlling
 
     public Transform[] points;
     private int destPoint = 0;
     private NavMeshAgent agent;
 
-
+    int hue = 0;
 
 
 
     void Start() {
         agent = GetComponent<NavMeshAgent>();
+        
 
         // Disabling auto-braking allows for continuous movement
         // between points (ie, the agent doesn't slow down as it
         // approaches a destination point).
         agent.autoBraking = false;
-        character = GetComponent<ThirdPersonCharacter>();
-        GotoNextPoint();
+        //character = GetComponent<ThirdPersonCharacter>();
+   //     movement = GetComponent<CharacterMovement>();
+       // GotoNextPoint();
+     //   movement.Rotation = Vector3.Angle(agent.destination, transform.forward);
     }
 
 
@@ -54,9 +57,34 @@ public class EnemyBehavior : MonoBehaviour {
     void Update() {
         // Choose the next destination point when the agent gets
         // close to the current one.
-        character.Move(agent.desiredVelocity,  false);
+        //character.Move(agent.desiredVelocity,  false);
+        // transform.forward;
+        //hue++;
+        //float angle = Vector3.Angle(agent.destination, transform.forward);
+        //if (angle > movement.Rotation + 10f)
+        //{
+        //    movement.Move(-agent.angularSpeed, 0f, false);
+        //    print("hue1 at: " + hue);
+        //}
+        //else if (angle < movement.Rotation - 10f)
+        //{
+        //    movement.Move(agent.angularSpeed, 0f, false);
+        //    print("hue2 at: " + hue);
+        //}
+        //else
+        //{
+        //    movement.Move(0f, agent.desiredVelocity.z, false);
+        //    print("hue3 at: " + hue);
+        //}
+        //  movement.Move(Mathf.Atan2(agent.desiredVelocity.x, agent.desiredVelocity.z), agent.desiredVelocity.z, false);
 
-        if (agent.remainingDistance < 0.5f)
-            GotoNextPoint();
+
+
+
+        //if (agent.remainingDistance < 0.5f)
+        //    GotoNextPoint();
     }
+
+
+
 }

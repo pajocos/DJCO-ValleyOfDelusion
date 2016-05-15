@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerMovement : MonoBehaviour
+public class CharacterMovement : MonoBehaviour
 {
     public float Speed = 10f;
     public float AngularSpeed = 10f;
@@ -10,23 +10,23 @@ public class PlayerMovement : MonoBehaviour
     public float JumpImpulsion = 10f;
     public float jumpSpeed = 0;
 
-    private Vector3 internalVelocity = Vector3.zero;
-
-
-    Rigidbody rigidbody;
-
-    private float sum = 0;
-    public bool grounded = false;
-    private bool lerpingBack = false;
-    public float lerpTime = 0f;
+    public float Rotation = 0f;
 
     public float PUSHBACKTIME = 10f;
+    public bool grounded = false;
+
+    Rigidbody rgbd;
+
+    private Vector3 internalVelocity = Vector3.zero;
+    private bool lerpingBack = false;
+    private float lerpTime = 0f;
+
     private Vector3 lerpEndPos;
     private Vector3 lerpStartPos;
 
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        rgbd = GetComponent<Rigidbody>();
     }
 
 
@@ -34,31 +34,37 @@ public class PlayerMovement : MonoBehaviour
     //speedInput should be Vert Axis
     public void Move(float turnAngle, float speedInput, bool jump)
     {
+
+
         if (lerpingBack)
         {
             LerpingBack();
+            //unable to jump and move
+            ////NOTA: talvez possa usar uma função que use o transform position em vez de lerp
+            jumpManager(false);
+            movementManager(0);
         }
         else
         {
             rotationManager(turnAngle);
             movementManager(speedInput);
             jumpManager(jump);
-            transform.position += internalVelocity * Time.deltaTime + Vector3.up * jumpSpeed * Time.deltaTime;
         }
+        transform.position += internalVelocity * Time.deltaTime + Vector3.up * jumpSpeed * Time.deltaTime;
 
     }
 
     private void movementManager(float speedInput)
     {
-        Vector3 movement = new Vector3(Mathf.Sin((sum * Mathf.PI) / 180), 0.0f, Mathf.Cos((Mathf.PI * sum) / 180));
+        Vector3 movement = new Vector3(Mathf.Sin((Rotation * Mathf.PI) / 180), 0.0f, Mathf.Cos((Mathf.PI * Rotation) / 180));
 
         internalVelocity = movement * Speed * speedInput;
     }
 
     private void rotationManager(float turnAngle)
     {
-        sum += turnAngle * AngularSpeed * Time.deltaTime;
-        rigidbody.rotation = Quaternion.Euler(0f, sum, 0f);
+        Rotation += turnAngle * AngularSpeed * Time.deltaTime;
+        rgbd.rotation = Quaternion.Euler(0f, Rotation, 0f);
     }
 
     private void jumpManager(bool jump)
