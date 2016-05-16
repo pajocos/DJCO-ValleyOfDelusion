@@ -5,7 +5,7 @@ public class CharacterMovement : MonoBehaviour
 {
     public float Speed = 10f;
     public float AngularSpeed = 10f;
-    public float Gravity = 10f;
+    public float Gravity = 20f;
 
     public float JumpImpulsion = 10f;
     public float jumpSpeed = 0;
@@ -72,8 +72,10 @@ public class CharacterMovement : MonoBehaviour
         if (jump && grounded)
         {
             jumpSpeed = JumpImpulsion;
+            grounded = false;
+
         }
-        if (!grounded)
+        else if (!grounded)
         {
             jumpSpeed -= Gravity * Time.deltaTime;
         }

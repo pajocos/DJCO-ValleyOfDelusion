@@ -6,11 +6,14 @@ public class PlayerBehaviour : MonoBehaviour {
     public CharacterMovement movement;
 
     private int floorContacts = 0;
-
-	// Use this for initialization
-	void Start () {
+    private RaycastHit hit;
+    private float dist = 1f;
+    private Vector3 dir= new Vector3(0, -1, 0);
+    private Transform transform;
+    // Use this for initialization
+    void Start () {
         movement = GetComponent<CharacterMovement>();
-	
+        transform = GetComponent<Transform>();
 	}
 
     // Update is called once per frame
@@ -22,24 +25,41 @@ public class PlayerBehaviour : MonoBehaviour {
         bool jump = Input.GetButtonDown("Jump");
         movement.Move(moveHorizontal, moveVertical, jump);
 
+        Debug.DrawRay(transform.position + Vector3.up, dir * dist, Color.red);
+        if (Physics.Raycast(transform.position + Vector3.up, dir,out hit, dist)) {
+
+            if (hit.collider.tag == "Floor") {
+                if (!movement.grounded && movement.jumpSpeed < 0 ) {
+                    movement.grounded = true;
+                    Debug.Log("grounded");
+                    movement.jumpSpeed = 0;
+
+                }
+            }
+            
+        } else {
+           
+
+        }
+
     }
 
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.collider.tag.Equals("Floor"))
+      /*  if (col.collider.tag.Equals("Floor"))
         {
             floorContacts++;
 
             movement.grounded = true;
             movement.jumpSpeed = 0;
-        }
+        }*/
     }
 
 
     void OnCollisionExit(Collision col)
     {
-        if (col.collider.tag == "Floor")
+       /* if (col.collider.tag == "Floor")
         {
             floorContacts--;
 
@@ -48,6 +68,6 @@ public class PlayerBehaviour : MonoBehaviour {
 
             if (floorContacts == 0)
                 movement.grounded = false;
-        }
+        }*/
     }
 }
