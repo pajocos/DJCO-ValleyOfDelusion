@@ -5,6 +5,8 @@ public class PlayerBehaviour : MonoBehaviour {
 
     public CharacterMovement movement;
 
+    private int floorContacts = 0;
+
 	// Use this for initialization
 	void Start () {
         movement = GetComponent<CharacterMovement>();
@@ -27,7 +29,12 @@ public class PlayerBehaviour : MonoBehaviour {
     {
         if (col.collider.tag.Equals("Floor"))
         {
-            movement.grounded = true;
+            floorContacts--;
+            if (floorContacts < 0)
+                floorContacts = 0;
+
+            if (floorContacts == 0)
+                movement.grounded = true;
             movement.jumpSpeed = 0;
         }
     }
@@ -37,6 +44,7 @@ public class PlayerBehaviour : MonoBehaviour {
     {
         if (col.collider.tag == "Floor")
         {
+            floorContacts++;
             movement.grounded = false;
         }
     }
