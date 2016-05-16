@@ -29,12 +29,9 @@ public class PlayerBehaviour : MonoBehaviour {
     {
         if (col.collider.tag.Equals("Floor"))
         {
-            floorContacts--;
-            if (floorContacts < 0)
-                floorContacts = 0;
+            floorContacts++;
 
-            if (floorContacts == 0)
-                movement.grounded = true;
+            movement.grounded = true;
             movement.jumpSpeed = 0;
         }
     }
@@ -44,8 +41,13 @@ public class PlayerBehaviour : MonoBehaviour {
     {
         if (col.collider.tag == "Floor")
         {
-            floorContacts++;
-            movement.grounded = false;
+            floorContacts--;
+
+            if (floorContacts < 0)
+                floorContacts = 0;
+
+            if (floorContacts == 0)
+                movement.grounded = false;
         }
     }
 }
