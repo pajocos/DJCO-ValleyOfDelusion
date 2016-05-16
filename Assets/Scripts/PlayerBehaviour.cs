@@ -38,36 +38,9 @@ public class PlayerBehaviour : MonoBehaviour {
             }
             
         } else {
-           
-
+            movement.grounded = false;
         }
 
     }
-
-
-    void OnCollisionEnter(Collision col)
-    {
-      /*  if (col.collider.tag.Equals("Floor"))
-        {
-            floorContacts++;
-
-            movement.grounded = true;
-            movement.jumpSpeed = 0;
-        }*/
-    }
-
-
-    void OnCollisionExit(Collision col)
-    {
-       /* if (col.collider.tag == "Floor")
-        {
-            floorContacts--;
-
-            if (floorContacts < 0)
-                floorContacts = 0;
-
-            if (floorContacts == 0)
-                movement.grounded = false;
-        }*/
-    }
+        
 }

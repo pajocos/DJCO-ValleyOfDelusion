@@ -72,7 +72,6 @@ public class CharacterMovement : MonoBehaviour
         if (jump && grounded)
         {
             jumpSpeed = JumpImpulsion;
-            grounded = false;
 
         }
         else if (!grounded)
