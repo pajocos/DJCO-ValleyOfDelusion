@@ -38,7 +38,6 @@ public class PlayerBehaviour : MonoBehaviour {
             if (hit.collider.tag == "Floor") {
                 if (!movement.grounded && movement.jumpSpeed < 0 ) {
                     movement.grounded = true;
-                    Debug.Log("grounded");
                     movement.jumpSpeed = 0;
 
                 }
