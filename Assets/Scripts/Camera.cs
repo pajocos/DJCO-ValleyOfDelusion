@@ -4,53 +4,44 @@ public class Camera : MonoBehaviour
 {
 
     public GameObject player;
-    private float disMax, disCurrent;
-    private Quaternion initialRotation;
-    private Vector3 initialPos;
+    public float damping;
+    Vector3 offset;
+
+    private bool canMove;
 
     void Start()
     {
-        disMax = 10;
+        offset = player.transform.position - transform.position;
+        canMove = true;
     }
 
     void Update()
     {
+        player.GetComponent<PlayerBehaviour>().canMove = canMove;
+    }
+
+    void LateUpdate()
+    {
         if (Input.GetMouseButtonDown(0))
-        {
-            initialRotation = transform.rotation;
-            initialPos = transform.position;
-        }
+            canMove = false;
         else if (Input.GetMouseButton(0))
         {
             transform.RotateAround(player.transform.position, player.transform.up,
-                Input.GetAxis("Mouse X") * 45 * Time.deltaTime);
+                Input.GetAxis("Mouse X") * 90 * Time.deltaTime);
             transform.RotateAround(player.transform.position, player.transform.right,
-                Input.GetAxis("Mouse Y") * 45 * Time.deltaTime);
+                Input.GetAxis("Mouse Y") * 90 * Time.deltaTime);
         }
-        else if (Input.GetMouseButtonUp(0))
+        else if(Input.GetMouseButtonUp(0))
+            canMove = true;
+        else
         {
-            transform.position = initialPos;
-            transform.rotation = initialRotation;
-            //transform.position = Vector3.Lerp(transform.position,initialPos, Time.deltaTime);
-            //transform.rotation = Quaternion.Lerp(transform.rotation,initialRotation, Time.deltaTime);
+            float currentAngle = transform.eulerAngles.y;
+            float desiredAngle = player.transform.eulerAngles.y;
+            float angle = Mathf.LerpAngle(currentAngle, desiredAngle, Time.deltaTime * damping);
+
+            Quaternion rotation = Quaternion.Euler(0, angle, 0);
+            transform.position = player.transform.position - (rotation * offset);
         }
-        disCurrent = Vector3.Distance(player.transform.position, transform.position);
         transform.LookAt(player.transform);
-        if (disCurrent > disMax || disMax < -disMax)
-            transform.position = Vector3.Lerp(transform.position, transform.position + transform.forward * disMax, Time.deltaTime);
-
-
-
-        //PREVENIR ATRAVESSAR PAREDES e CHAO...
-    //    RaycastHit colisionRay;
-
-    //    if (Physics.Raycast(transform.position, transform.forward, out colisionRay))
-    //    {
-    //        if (colisionRay.transform != player.transform)
-    //        {
-    //            transform.position = colisionRay.point + transform.forward * 2;
-    //        }
-
-    //    }
     }
 }
