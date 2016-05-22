@@ -17,7 +17,7 @@ public class CharacterMovement : MonoBehaviour
 
     Rigidbody rgbd;
 
-    private Vector3 internalVelocity = Vector3.zero;
+    public Vector3 internalVelocity = Vector3.zero;
     private bool lerpingBack = false;
     private float lerpTime = 0f;
 

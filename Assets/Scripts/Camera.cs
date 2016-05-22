@@ -2,8 +2,7 @@
 
 public class Camera : MonoBehaviour
 {
-
-    public GameObject player;
+    public PlayerBehaviour player;
     public float damping;
     Vector3 offset;
 
@@ -11,36 +10,35 @@ public class Camera : MonoBehaviour
 
     void Start()
     {
+        transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 5,
+            player.transform.position.z - 10);
         offset = player.transform.position - transform.position;
-        canMove = true;
-    }
-
-    void Update()
-    {
-        player.GetComponent<PlayerBehaviour>().canMove = canMove;
+        player.canMove = true;
     }
 
     void LateUpdate()
     {
-        if (Input.GetMouseButtonDown(0))
-            canMove = false;
-        else if (Input.GetMouseButton(0))
+        var velocity = player.movement.internalVelocity;
+
+        if (Input.GetMouseButtonDown(0) && player.movement.internalVelocity == Vector3.zero)
+            player.canMove = false;
+        else if (Input.GetMouseButton(0) && player.movement.internalVelocity == Vector3.zero)
         {
             transform.RotateAround(player.transform.position, player.transform.up,
-                Input.GetAxis("Mouse X") * 90 * Time.deltaTime);
+                Input.GetAxis("Mouse X")*90*Time.deltaTime);
             transform.RotateAround(player.transform.position, player.transform.right,
-                Input.GetAxis("Mouse Y") * 90 * Time.deltaTime);
+                Input.GetAxis("Mouse Y")*90*Time.deltaTime);
         }
-        else if(Input.GetMouseButtonUp(0))
-            canMove = true;
+        else if (Input.GetMouseButtonUp(0) && player.movement.internalVelocity == Vector3.zero)
+            player.canMove = true;
         else
         {
             float currentAngle = transform.eulerAngles.y;
             float desiredAngle = player.transform.eulerAngles.y;
-            float angle = Mathf.LerpAngle(currentAngle, desiredAngle, Time.deltaTime * damping);
+            float angle = Mathf.LerpAngle(currentAngle, desiredAngle, Time.deltaTime*damping);
 
             Quaternion rotation = Quaternion.Euler(0, angle, 0);
-            transform.position = player.transform.position - (rotation * offset);
+            transform.position = player.transform.position - (rotation*offset);
         }
         transform.LookAt(player.transform);
     }
