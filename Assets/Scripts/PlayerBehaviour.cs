@@ -8,7 +8,6 @@ public class PlayerBehaviour : MonoBehaviour {
     private int floorContacts = 0;
     private RaycastHit hit;
     private float dist = 1f;
-    private Vector3 dir= new Vector3(0, -1, 0);
     private Transform transform;
 
     public bool canMove;
@@ -32,8 +31,8 @@ public class PlayerBehaviour : MonoBehaviour {
             movement.Move(moveHorizontal, moveVertical, jump);
         }
 
-        Debug.DrawRay(transform.position + Vector3.up, dir * dist, Color.red);
-        if (Physics.Raycast(transform.position + Vector3.up, dir,out hit, dist)) {
+        Debug.DrawRay(transform.position + Vector3.up, Vector3.down * dist, Color.red);
+        if (Physics.Raycast(transform.position + Vector3.up, Vector3.down,out hit, dist)) {
 
             if (hit.collider.tag == "Floor") {
                 if (!movement.grounded && movement.jumpSpeed < 0 ) {
