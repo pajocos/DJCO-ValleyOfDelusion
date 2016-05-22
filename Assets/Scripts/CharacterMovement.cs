@@ -43,9 +43,12 @@ public class CharacterMovement : MonoBehaviour
             ////NOTA: talvez possa usar uma função que use o transform position em vez de lerp
             jumpManager(false);
             movementManager(0);
+            print("wut");
         }
         else
         {
+            GetComponent<Animator>().SetFloat("walking", speedInput);
+            GetComponent<Animator>().SetBool("isWalking", speedInput != 0);
             rotationManager(turnAngle);
             movementManager(speedInput);
             jumpManager(jump);
