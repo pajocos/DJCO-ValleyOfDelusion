@@ -7,7 +7,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
     private int floorContacts = 0;
     private RaycastHit hit;
-    private float dist = 1f;
+    public float dist = 1f;
     private Transform transform;
 
     public bool canMove;

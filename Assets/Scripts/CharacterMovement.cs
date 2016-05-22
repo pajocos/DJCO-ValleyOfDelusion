@@ -35,7 +35,6 @@ public class CharacterMovement : MonoBehaviour
     public void Move(float turnAngle, float speedInput, bool jump)
     {
 
-
         if (lerpingBack)
         {
             LerpingBack();
@@ -43,7 +42,6 @@ public class CharacterMovement : MonoBehaviour
             ////NOTA: talvez possa usar uma função que use o transform position em vez de lerp
             jumpManager(false);
             movementManager(0);
-            print("wut");
         }
         else
         {
@@ -54,6 +52,9 @@ public class CharacterMovement : MonoBehaviour
             jumpManager(jump);
         }
         transform.position += internalVelocity * Time.deltaTime + Vector3.up * jumpSpeed * Time.deltaTime;
+
+        rgbd.velocity = Vector3.zero;
+        rgbd.angularVelocity = Vector3.zero;
 
     }
 
