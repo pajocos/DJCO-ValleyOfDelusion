@@ -12,6 +12,8 @@ public class PlayerBehaviour : MonoBehaviour {
 
     public bool canMove;
 
+    private int gems = 0;
+
     // Use this for initialization
     void Start () {
         movement = GetComponent<CharacterMovement>();
@@ -46,6 +48,17 @@ public class PlayerBehaviour : MonoBehaviour {
             movement.grounded = false;
         }
 
+    }
+
+    void OnCollisionEnter(Collision col)
+    {
+        if(col.collider.tag == "Gem")
+        {
+            gems++;
+            col.collider.GetComponentInParent<SphereCollider>().enabled = false;
+            col.collider.GetComponentInParent<MeshRenderer>().enabled = false;
+
+        }
     }
         
 }
