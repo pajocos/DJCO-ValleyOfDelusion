@@ -45,8 +45,8 @@ public class CharacterMovement : MonoBehaviour
         }
         else
         {
-            GetComponent<Animator>().SetFloat("walking", speedInput);
-            GetComponent<Animator>().SetBool("isWalking", speedInput != 0);
+            //GetComponent<Animator>().SetFloat("walking", speedInput);
+            //GetComponent<Animator>().SetBool("isWalking", speedInput != 0);
             rotationManager(turnAngle);
             movementManager(speedInput);
             jumpManager(jump);
