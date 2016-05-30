@@ -4,14 +4,16 @@ public class Camera : MonoBehaviour
 {
     public PlayerBehaviour player;
     public float damping;
+    public Vector3 distance = new Vector3(0,5,10);
+
     Vector3 offset;
 
     private bool canMove;
 
     void Start()
     {
-        transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 5,
-            player.transform.position.z - 10);
+        transform.position = new Vector3(player.transform.position.x + distance.x, player.transform.position.y + distance.y,
+            player.transform.position.z - distance.z);
         offset = player.transform.position - transform.position;
         player.canMove = true;
     }
@@ -30,14 +32,16 @@ public class Camera : MonoBehaviour
                 Input.GetAxis("Mouse Y")*90*Time.deltaTime);
         }
         else if (Input.GetMouseButtonUp(0) && player.movement.internalVelocity == Vector3.zero)
+        {
             player.canMove = true;
+        }
         else
         {
-            float currentAngle = transform.eulerAngles.y;
-            float desiredAngle = player.transform.eulerAngles.y;
-            float angle = Mathf.LerpAngle(currentAngle, desiredAngle, Time.deltaTime*damping);
+            float currentAngleY = transform.eulerAngles.y;
+            float desiredAngleY = player.transform.eulerAngles.y;
+            float angleY = Mathf.LerpAngle(currentAngleY, desiredAngleY, Time.deltaTime*damping);
 
-            Quaternion rotation = Quaternion.Euler(0, angle, 0);
+            Quaternion rotation = Quaternion.Euler(0, angleY, 0);
             transform.position = player.transform.position - (rotation*offset);
         }
         transform.LookAt(player.transform);
