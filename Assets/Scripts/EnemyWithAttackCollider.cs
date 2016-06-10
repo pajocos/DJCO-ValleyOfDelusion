@@ -36,7 +36,6 @@ public class EnemyWithAttackCollider : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
-        Debug.Log("triggered");
         if (col.tag == ("Player"))
         {
             Player.movement.PushBack(10f, transform.forward);
@@ -46,7 +45,6 @@ public class EnemyWithAttackCollider : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
-        Debug.Log("collisioned");
         if (col.collider.tag == ("Player"))
         {
             Player.movement.PushBack(10f, transform.forward);
