@@ -5,25 +5,12 @@ using Assets.Scripts.Utils;
 using Assets.Scripts;
 
 
-public class FixedEnemyBehavior : MonoBehaviour {
-
-    public PlayerBehaviour Player;
-    public float attackDistance = 10f;
-    public float adjustment = 1f;
-    public float punchDistance = 3f;
-    public float punchSpeed = 1f;
-    public float knockBack = 10f;
-
-
-    private Rigidbody rgd;    
-    private BoxCollider attackCollider;
-
+public class FixedEnemyBehavior : EnemyWithAttackCollider{
+    
     void Start() {
        
         attackCollider = GetComponentInChildren<BoxCollider>();
         attackCollider.enabled = false;
-        
-
     }
 
 
@@ -40,36 +27,6 @@ public class FixedEnemyBehavior : MonoBehaviour {
     
     }
 
-    private void PushEnemy()
-    {
-        attackCollider.enabled = true;
-        attackCollider.transform.position = transform.position;        
-    }
-
-    private void UpdateAttackCollider()
-    {
-        if(attackCollider.enabled)
-        {
-            if (Vector3.Distance(attackCollider.transform.position, transform.position) < punchDistance)
-            {
-                attackCollider.transform.position += transform.forward * punchSpeed * Time.deltaTime;
-            }
-            else
-            {
-                attackCollider.enabled = false;
-            }
-        }
-    }
-
-
-    void OnTriggerEnter(Collider col)
-    {
-        if (col.tag ==("Player"))
-        {
-            Player.movement.PushBack(10f, transform.forward);
-            attackCollider.enabled = false;
-        }
-    }
-
+   
 
 }
