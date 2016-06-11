@@ -9,18 +9,18 @@ public class PlayerBehaviour : MonoBehaviour
     private int floorContacts = 0;
     private RaycastHit hit;
     public float dist = 1f;
-    private Transform transform;
 
     public bool canMove;
 
-    private int gems = 0;
+    private bool alive;
+    private int gems;
 
     // Use this for initialization
     void Start()
     {
         movement = GetComponent<CharacterMovement>();
-        transform = GetComponent<Transform>();
-
+        gems = 0;
+        alive = true;
         canMove = true;
     }
 
@@ -88,9 +88,19 @@ public class PlayerBehaviour : MonoBehaviour
     }
 
 
-    public int getGems()
+    public int GetGems()
     {
         return gems;
+    }
+
+    public bool IsAlive()
+    {
+        return alive;
+    }
+
+    public void Kill()
+    {
+        alive = false;
     }
 
 }
