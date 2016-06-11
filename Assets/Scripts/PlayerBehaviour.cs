@@ -6,11 +6,12 @@ public class PlayerBehaviour : MonoBehaviour
     public Collider groundCollider;
     public CharacterMovement movement;
 
-    private int floorContacts = 0;
-    private RaycastHit hit;
     public float dist = 1f;
 
     public bool canMove;
+
+    //if his speed is greater than MaxSpeed, the player dies
+    public float MaxJumpSpeed = 100f;
 
     private bool alive;
     private int gems;
@@ -27,6 +28,9 @@ public class PlayerBehaviour : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (Mathf.Abs(movement.jumpSpeed) > MaxJumpSpeed)
+            Kill();
+
         if (canMove)
         {
             float moveHorizontal = Input.GetAxis("Horizontal");
@@ -63,8 +67,7 @@ public class PlayerBehaviour : MonoBehaviour
 
 
     void OnCollisionStay(Collision col)
-    {   
-
+    {
         if (col.collider.tag == "Floor")
         {
             foreach (ContactPoint c in col.contacts)
@@ -88,6 +91,15 @@ public class PlayerBehaviour : MonoBehaviour
     }
 
 
+
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.tag == "Water")
+        {
+            Kill();
+        }
+    }
+
     public int GetGems()
     {
         return gems;
@@ -100,6 +112,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void Kill()
     {
+        print("dead");
         alive = false;
     }
 
