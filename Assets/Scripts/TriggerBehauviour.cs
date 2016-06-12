@@ -11,7 +11,7 @@ public class TriggerBehauviour : MonoBehaviour {
     {
         //Type t = typeof(ITriggableBehauviour);
         ITarget = (ITriggableBehauviour) Target.GetComponent(typeof(ITriggableBehauviour));
-        ITarget.Trigger();      
+        ITarget.RemoteTrigger();      
     }
 
 }

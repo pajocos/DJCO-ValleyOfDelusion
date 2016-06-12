@@ -7,6 +7,10 @@ using Assets.Scripts;
 
 public class FixedEnemyBehavior : EnemyWithAttackCollider{
     
+    public float attackDistance = 10f;
+    public float adjustment = 1f;
+
+
     void Start() {
        
         attackCollider = GetComponentInChildren<BoxCollider>();

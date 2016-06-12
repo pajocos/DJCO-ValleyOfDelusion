@@ -3,5 +3,5 @@ using System.Collections;
 
 public interface ITriggableBehauviour {
 
-    void Trigger();
+    void RemoteTrigger();
 }

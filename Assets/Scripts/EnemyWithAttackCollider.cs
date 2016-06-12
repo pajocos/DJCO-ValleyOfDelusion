@@ -4,8 +4,6 @@ using System.Collections;
 public class EnemyWithAttackCollider : MonoBehaviour {
 
     public PlayerBehaviour Player;
-    public float attackDistance = 10f;
-    public float adjustment = 1f;
     public float punchDistance = 3f;
     public float punchSpeed = 1f;
     public float knockBack = 10f;
