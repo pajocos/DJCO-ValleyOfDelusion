@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Text;
 
-public class MoveCanvas : MonoBehaviour
+public class StartStuff : MonoBehaviour
 {
     private float diff_width;
     private float diff_height;
@@ -18,7 +18,7 @@ public class MoveCanvas : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void MoveButtons()
     {
         buttons.position = Vector3.Lerp(buttons.position, new Vector3(diff_width, buttons.position.y, 0),
             Time.deltaTime*1.5f);
