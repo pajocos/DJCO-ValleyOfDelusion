@@ -32,7 +32,7 @@ public class CharacterMovement : MonoBehaviour
 
     //turnAngle should be Hor axis
     //speedInput should be Vert Axis
-    public void Move(float turnAngle, float speedInput, bool jump)
+    public void Move(float turnAngle, float speedInput, bool jump,bool run)
     {
 
         if (lerpingBack)
@@ -45,10 +45,19 @@ public class CharacterMovement : MonoBehaviour
         }
         else
         {
-            GetComponent<Animator>().SetFloat("Speed", speedInput);
-            GetComponent<Animator>().SetBool("IsWalking", speedInput != 0);
+            float speedtemp=speedInput;
+            if (!run) {
+                speedtemp = speedtemp / 2f;
+
+                GetComponent<Animator>().SetFloat("WalkMulti",4f);
+            } else {
+
+                GetComponent<Animator>().SetFloat("WalkMulti",1.7f);
+            }
+            GetComponent<Animator>().SetFloat("Speed", speedtemp);
+            GetComponent<Animator>().SetBool("IsWalking", speedInput != 0 );
             rotationManager(turnAngle);
-            movementManager(speedInput);
+            movementManager(speedtemp);
             jumpManager(jump);
         }
         transform.position += internalVelocity * Time.deltaTime + Vector3.up * jumpSpeed * Time.deltaTime;
