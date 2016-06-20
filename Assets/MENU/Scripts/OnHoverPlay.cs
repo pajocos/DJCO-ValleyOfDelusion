@@ -1,19 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class OnHoverPlay : MonoBehaviour
+public class OnHoverPlay : MonoBehaviour, IPointerEnterHandler
 {
-
-    public AudioClip clip;
-    private AudioSource audio;
-
-	void Start ()
-	{
-	    audio = new AudioSource();
-	}
-
+    public AudioSource Audio;
+    
     public void OnPointerEnter(PointerEventData eventData)
     {
-        audio.PlayOneShot(clip);
+        Debug.Log("Pointer Enter");
+        Audio.Play();
     }
 }
