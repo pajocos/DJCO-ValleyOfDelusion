@@ -23,8 +23,8 @@ public class ButtonBehavior : MonoBehaviour
     private Vector3 originalPosTitle;
     private Vector3 originalPosHistory;
 
-    private Fading fading;
-    
+    public AudioSource backgroundMusic;
+
     public bool inMainMenu;
 
     // Use this for initialization
@@ -44,8 +44,7 @@ public class ButtonBehavior : MonoBehaviour
         originalPosHistory = history.transform.position;
 
         EventSystem.current.SetSelectedGameObject(null);
-
-        fading = GetComponent<Fading>();
+        
         inMainMenu = true;
     }
 
@@ -114,6 +113,7 @@ public class ButtonBehavior : MonoBehaviour
 
         GameObject menu = GameObject.Find("MainMenu");
         menu.SetActive(false);
+        backgroundMusic.Stop();
 
         SceneManager.LoadScene(1);
     }
