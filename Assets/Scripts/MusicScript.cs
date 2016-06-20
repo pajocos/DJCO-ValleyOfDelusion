@@ -8,6 +8,8 @@ public class MusicScript : MonoBehaviour {
     public AudioClip[] audios;
     public AudioSource backgroundMusic;
     public AudioSource animationSound;
+    public AudioClip[] grass_steps;
+    public AudioClip[] grass_run;
     public AudioClip[] stone_steps;
     public AudioClip[] stone_run;
     private AudioClip currentStep;
@@ -43,7 +45,7 @@ public class MusicScript : MonoBehaviour {
 
     }
 
-    void StepSound(string ident) {
+    public void StepSound(string ident) {
 
         int vl = (int)(Random.value * 20);
         int vlImp = 1;

@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerBehaviour : MonoBehaviour
-{
+public class PlayerBehaviour : MonoBehaviour {
     public Collider groundCollider;
     public CharacterMovement movement;
-
+    public MusicScript musicManager;
     public float dist = 1f;
 
     public bool canMove;
@@ -17,8 +16,7 @@ public class PlayerBehaviour : MonoBehaviour
     private int gems;
 
     // Use this for initialization
-    void Start()
-    {
+    void Start() {
         movement = GetComponent<CharacterMovement>();
         gems = 0;
         alive = true;
@@ -26,8 +24,7 @@ public class PlayerBehaviour : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
-    {
+    void FixedUpdate() {
         if (Mathf.Abs(movement.jumpSpeed) > MaxJumpSpeed)
             Kill();
 
@@ -43,33 +40,27 @@ public class PlayerBehaviour : MonoBehaviour
         }
 
 
-        if (canMove)
-        {
+        if (canMove) {
             float moveHorizontal = Input.GetAxis("Horizontal");
             float moveVertical = Input.GetAxis("Vertical");
             bool jump = Input.GetButtonDown("Jump");
             bool run = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
-            movement.Move(moveHorizontal, moveVertical, jump,run);
+            movement.Move(moveHorizontal, moveVertical, jump, run);
         }
     }
 
 
-    void OnCollisionEnter(Collision col)
-    {
-        if (col.collider.tag == "Gem")
-        {
+    void OnCollisionEnter(Collision col) {
+        if (col.collider.tag == "Gem") {
             gems++;
             col.collider.GetComponentInParent<SphereCollider>().enabled = false;
             col.collider.GetComponentInParent<MeshRenderer>().enabled = false;
 
         }
-        
-        if (col.collider.tag == "Floor")
-        {
-            foreach (ContactPoint c in col.contacts)
-            {
-                if(c.thisCollider == groundCollider)
-                {
+
+        if (col.collider.tag == "Floor") {
+            foreach (ContactPoint c in col.contacts) {
+                if (c.thisCollider == groundCollider) {
                     movement.grounded = true;
                     movement.jumpSpeed = 0;
                     break;
@@ -79,14 +70,10 @@ public class PlayerBehaviour : MonoBehaviour
     }
 
 
-    void OnCollisionStay(Collision col)
-    {
-        if (col.collider.tag == "Floor")
-        {
-            foreach (ContactPoint c in col.contacts)
-            {
-                if (c.thisCollider == groundCollider)
-                {
+    void OnCollisionStay(Collision col) {
+        if (col.collider.tag == "Floor") {
+            foreach (ContactPoint c in col.contacts) {
+                if (c.thisCollider == groundCollider) {
                     movement.grounded = true;
                     movement.jumpSpeed = 0;
                     break;
@@ -95,41 +82,36 @@ public class PlayerBehaviour : MonoBehaviour
         }
     }
 
-    void OnCollisionExit(Collision col)
-    {
-        if (col.collider.tag == "Floor")
-        {
+    void OnCollisionExit(Collision col) {
+        if (col.collider.tag == "Floor") {
             movement.grounded = false;
         }
     }
 
 
 
-    void OnTriggerEnter(Collider col)
-    {
-        if (col.tag == "Water")
-        {
+    void OnTriggerEnter(Collider col) {
+        if (col.tag == "Water") {
             Kill();
         }
     }
 
-    public int GetGems()
-    {
+    public int GetGems() {
         return gems;
     }
 
-    public bool IsAlive()
-    {
+    public bool IsAlive() {
         return alive;
     }
 
-    public void Kill()
-    {
+    public void Kill() {
         print("dead");
         alive = false;
     }
+    public void StepSound(string ident) {
+        musicManager.StepSound(ident);
+    }
+
+
 
 }
-
-
-
