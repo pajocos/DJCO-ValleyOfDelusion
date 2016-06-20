@@ -31,6 +31,18 @@ public class PlayerBehaviour : MonoBehaviour
         if (Mathf.Abs(movement.jumpSpeed) > MaxJumpSpeed)
             Kill();
 
+
+        if (Input.GetKeyDown(KeyCode.LeftControl)) {
+            canMove = false;
+            movement.Crouch();
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftControl)) {
+            canMove = true;
+            movement.GetUp();
+        }
+
+
         if (canMove)
         {
             float moveHorizontal = Input.GetAxis("Horizontal");

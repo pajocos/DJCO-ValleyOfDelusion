@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
-public class CharacterMovement : MonoBehaviour
-{
+public class CharacterMovement : MonoBehaviour {
     public float RunningSpeed = 10f;
     public float WalkingSpeed = 5f;
     public float AngularSpeed = 10f;
@@ -22,32 +22,28 @@ public class CharacterMovement : MonoBehaviour
     private bool lerpingBack = false;
     private float lerpTime = 0f;
 
+
     private Vector3 lerpEndPos;
     private Vector3 lerpStartPos;
 
-    void Start()
-    {
+    void Start() {
         rgbd = GetComponent<Rigidbody>();
     }
 
 
     //turnAngle should be Hor axis
     //speedInput should be Vert Axis
-    public void Move(float turnAngle, float speedInput, bool jump,bool run)
-    {
+    public void Move(float turnAngle, float speedInput, bool jump, bool run) {
 
-        if (lerpingBack)
-        {
+        if (lerpingBack) {
             LerpingBack();
             //unable to jump and move
             jumpManager(false);
-            movementManager(0,run);
-        }
-        else
-        {            
-            GetComponent<Animator>().SetBool("IsWalking", speedInput != 0 );
+            movementManager(0, run);
+        } else {
+            GetComponent<Animator>().SetBool("IsWalking", speedInput != 0);
             rotationManager(turnAngle);
-            movementManager(speedInput,run);
+            movementManager(speedInput, run);
             jumpManager(jump);
         }
         transform.position += internalVelocity * Time.deltaTime + Vector3.up * jumpSpeed * Time.deltaTime;
@@ -57,19 +53,28 @@ public class CharacterMovement : MonoBehaviour
 
     }
 
-    private void movementManager(float speedInput, bool run)
-    {
+    internal void GetUp() {
+        
+            GetComponent<Animator>().SetBool("Crouched",false);
+        
+    }
+
+    internal void Crouch() {
+        GetComponent<Animator>().SetBool("IsWalking", false);
+        GetComponent<Animator>().SetBool("Crouched",true);
+        
+
+    }
+
+    private void movementManager(float speedInput, bool run) {
         Vector3 movement = new Vector3(Mathf.Sin((Rotation * Mathf.PI) / 180), 0.0f, Mathf.Cos((Mathf.PI * Rotation) / 180));
 
-        if (!run)
-        {
+        if (!run) {
 
             GetComponent<Animator>().SetFloat("WalkMulti", 2f);
             GetComponent<Animator>().SetFloat("Speed", 0.5f);
             internalVelocity = movement * WalkingSpeed * speedInput;
-        }
-        else
-        {
+        } else {
 
             GetComponent<Animator>().SetFloat("WalkMulti", 1f);
             GetComponent<Animator>().SetFloat("Speed", 1f);
@@ -78,29 +83,23 @@ public class CharacterMovement : MonoBehaviour
 
     }
 
-    private void rotationManager(float turnAngle)
-    {
+    private void rotationManager(float turnAngle) {
         Rotation += turnAngle * AngularSpeed * Time.deltaTime;
         rgbd.rotation = Quaternion.Euler(0f, Rotation, 0f);
     }
 
-    private void jumpManager(bool jump)
-    {
-        if (jump && grounded)
-        {
+    private void jumpManager(bool jump) {
+        if (jump && grounded) {
             jumpSpeed = JumpImpulsion;
 
-        }
-        else if (!grounded)
-        {
+        } else if (!grounded) {
             jumpSpeed -= Gravity * Time.deltaTime;
         }
     }
 
 
 
-    private void LerpingBack()
-    {
+    private void LerpingBack() {
         lerpTime += Time.deltaTime;
         //print("lerptime: "+lerpTime);
         if (lerpTime <= PUSHBACKTIME)
@@ -110,8 +109,7 @@ public class CharacterMovement : MonoBehaviour
     }
 
 
-    public void PushBack(float distance, Vector3 direction)
-    {
+    public void PushBack(float distance, Vector3 direction) {
         lerpingBack = true;
         lerpTime = 0;
 
