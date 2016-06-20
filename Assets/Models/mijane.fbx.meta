@@ -114,7 +114,7 @@ ModelImporter:
     4300000: Cabelo
     4300002: corpo
     4300004: Mascara
-    7400000: esqueleto|esqueletoAction
+    7400000: mijane_walk
     9500000: //RootNode
     13700000: Cabelo
     13700002: corpo
@@ -141,7 +141,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: esqueleto|esqueletoAction
+      name: mijane_walk
       takeName: esqueleto|esqueletoAction
       firstFrame: 0
       lastFrame: 39
@@ -163,7 +163,14 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0
+        functionName: NewEvent
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1

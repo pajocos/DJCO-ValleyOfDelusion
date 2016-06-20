@@ -64,14 +64,14 @@ public class CharacterMovement : MonoBehaviour
         if (!run)
         {
 
-            GetComponent<Animator>().SetFloat("WalkMulti", 4f);
+            GetComponent<Animator>().SetFloat("WalkMulti", 2f);
             GetComponent<Animator>().SetFloat("Speed", 0.5f);
             internalVelocity = movement * WalkingSpeed * speedInput;
         }
         else
         {
 
-            GetComponent<Animator>().SetFloat("WalkMulti", 1.7f);
+            GetComponent<Animator>().SetFloat("WalkMulti", 1f);
             GetComponent<Animator>().SetFloat("Speed", 1f);
             internalVelocity = movement * RunningSpeed * speedInput;
         }
