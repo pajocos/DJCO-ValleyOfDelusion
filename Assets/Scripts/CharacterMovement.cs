@@ -3,7 +3,8 @@ using System.Collections;
 
 public class CharacterMovement : MonoBehaviour
 {
-    public float Speed = 10f;
+    public float RunningSpeed = 10f;
+    public float WalkingSpeed = 5f;
     public float AngularSpeed = 10f;
     public float Gravity = 20f;
 
@@ -32,23 +33,21 @@ public class CharacterMovement : MonoBehaviour
 
     //turnAngle should be Hor axis
     //speedInput should be Vert Axis
-    public void Move(float turnAngle, float speedInput, bool jump)
+    public void Move(float turnAngle, float speedInput, bool jump,bool run)
     {
 
         if (lerpingBack)
         {
             LerpingBack();
             //unable to jump and move
-            ////NOTA: talvez possa usar uma função que use o transform position em vez de lerp
             jumpManager(false);
-            movementManager(0);
+            movementManager(0,run);
         }
         else
-        {
-            GetComponent<Animator>().SetFloat("Speed", speedInput);
-            GetComponent<Animator>().SetBool("IsWalking", speedInput != 0);
+        {            
+            GetComponent<Animator>().SetBool("IsWalking", speedInput != 0 );
             rotationManager(turnAngle);
-            movementManager(speedInput);
+            movementManager(speedInput,run);
             jumpManager(jump);
         }
         transform.position += internalVelocity * Time.deltaTime + Vector3.up * jumpSpeed * Time.deltaTime;
@@ -58,11 +57,25 @@ public class CharacterMovement : MonoBehaviour
 
     }
 
-    private void movementManager(float speedInput)
+    private void movementManager(float speedInput, bool run)
     {
         Vector3 movement = new Vector3(Mathf.Sin((Rotation * Mathf.PI) / 180), 0.0f, Mathf.Cos((Mathf.PI * Rotation) / 180));
 
-        internalVelocity = movement * Speed * speedInput;
+        if (!run)
+        {
+
+            GetComponent<Animator>().SetFloat("WalkMulti", 4f);
+            GetComponent<Animator>().SetFloat("Speed", 0.5f);
+            internalVelocity = movement * WalkingSpeed * speedInput;
+        }
+        else
+        {
+
+            GetComponent<Animator>().SetFloat("WalkMulti", 1.7f);
+            GetComponent<Animator>().SetFloat("Speed", 1f);
+            internalVelocity = movement * RunningSpeed * speedInput;
+        }
+
     }
 
     private void rotationManager(float turnAngle)

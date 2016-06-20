@@ -36,7 +36,8 @@ public class PlayerBehaviour : MonoBehaviour
             float moveHorizontal = Input.GetAxis("Horizontal");
             float moveVertical = Input.GetAxis("Vertical");
             bool jump = Input.GetButtonDown("Jump");
-            movement.Move(moveHorizontal, moveVertical, jump);
+            bool run = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
+            movement.Move(moveHorizontal, moveVertical, jump,run);
         }
     }
 
