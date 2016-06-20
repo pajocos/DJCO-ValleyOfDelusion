@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.EventSystems;
-using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class ButtonBehavior : MonoBehaviour
 {
@@ -22,6 +23,10 @@ public class ButtonBehavior : MonoBehaviour
     private Vector3 originalPosTitle;
     private Vector3 originalPosHistory;
 
+    private Fading fading;
+    
+    public bool inMainMenu;
+
     // Use this for initialization
     void Start()
     {
@@ -39,6 +44,9 @@ public class ButtonBehavior : MonoBehaviour
         originalPosHistory = history.transform.position;
 
         EventSystem.current.SetSelectedGameObject(null);
+
+        fading = GetComponent<Fading>();
+        inMainMenu = true;
     }
 
     // Update is called once per frame
@@ -91,6 +99,23 @@ public class ButtonBehavior : MonoBehaviour
         restorePos = false;
         moveHistory = false;
         moveCredits = true;
+    }
+
+    //IEnumerator LoadScene()
+    //{
+    //    var fadeTime = fading.BeginFade(1);
+    //    yield return new WaitForSeconds(fadeTime);
+    //    SceneManager.LoadScene(1);
+    //}
+
+    public void NewGame()
+    {
+        inMainMenu = false;
+
+        GameObject menu = GameObject.Find("MainMenu");
+        menu.SetActive(false);
+
+        SceneManager.LoadScene(1);
     }
 
     public void Close()

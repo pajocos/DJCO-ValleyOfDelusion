@@ -5,13 +5,14 @@ using System.Collections;
 public class Transparency : MonoBehaviour
 {
     private Image ButtonBackground;
-    public float transparency;
+    public float transparency = 0.5f;
 
     // Use this for initialization
     void Start()
     {
         ButtonBackground = GetComponent<Image>();
         SetTransparency(transparency);
+        
     }
 
     public void SetTransparency(float t)
