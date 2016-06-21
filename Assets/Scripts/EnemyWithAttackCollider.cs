@@ -4,41 +4,44 @@ using System.Collections;
 public class EnemyWithAttackCollider : MonoBehaviour {
 
     public PlayerBehaviour Player;
-    public float punchDistance = 3f;
-    public float punchSpeed = 1f;
-    public float knockBack = 10f;
+    public float cooldownTime = 2f;
+    public float knockBack = 4f;
     public BoxCollider attackCollider;
 
+    private float currentCooldown = 0f;
+    protected Animator animator;
+    private bool attacking = false;
+
+    public float pushDelay=2f;
+    private float pushCountDown = 2f;   
 
     public void PushEnemy()
     {
-        attackCollider.enabled = true;
-        attackCollider.transform.position = transform.position;
-    }
-
-    public void UpdateAttackCollider()
-    {
-        if (attackCollider.enabled)
-        {
-            if (Vector3.Distance(attackCollider.transform.position, transform.position) < punchDistance)
-            {
-                attackCollider.transform.position += transform.forward * punchSpeed * Time.deltaTime;
-            }
-            else
-            {
-                attackCollider.enabled = false;
-            }
+        if (currentCooldown == 0f) {
+            animator.SetTrigger("Attack");
+            currentCooldown = cooldownTime;
+            attacking = true;
         }
     }
 
+    void FixedUpdate() {
 
-    void OnTriggerEnter(Collider col)
-    {
-        if (col.tag == ("Player"))
-        {
-            Player.movement.PushBack(10f, transform.forward);
-            attackCollider.enabled = false;
+        currentCooldown -= Time.fixedDeltaTime;
+        if (attacking) {
+            pushCountDown -= Time.fixedDeltaTime;
         }
+        if (currentCooldown < 0f) {
+            currentCooldown = 0f;
+        }
+        if (pushCountDown < 0f) {
+            pushCountDown = 0f;
+        }
+        if (pushCountDown == 0) { 
+            Player.movement.PushBack(knockBack, transform.forward);
+            pushCountDown = pushDelay;
+            attacking = false;
+        }
+
     }
 
     void OnCollisionEnter(Collision col)
@@ -46,8 +49,16 @@ public class EnemyWithAttackCollider : MonoBehaviour {
         if (col.collider.tag == ("Player"))
         {
             Player.movement.PushBack(10f, transform.forward);
-            attackCollider.enabled = false;
         }
+    }
+
+    public void TriggerWithPlayer() {
+        PushEnemy();
+    }
+
+    public void StopAttack() {
+        pushCountDown = pushDelay;
+        attacking = false;
     }
 
 }
