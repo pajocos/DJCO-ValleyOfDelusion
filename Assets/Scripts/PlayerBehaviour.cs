@@ -58,15 +58,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
         }
 
-        if (col.collider.tag == "Floor") {
-            foreach (ContactPoint c in col.contacts) {
-                if (c.thisCollider == groundCollider) {
-                    movement.grounded = true;
-                    movement.jumpSpeed = 0;
-                    break;
-                }
-            }
-        }
+        
     }
 
 
@@ -112,6 +104,17 @@ public class PlayerBehaviour : MonoBehaviour {
         musicManager.StepSound(ident);
     }
 
+    public void onGroundColisionEnter() {
 
+        
+                    movement.grounded = true;
+                    movement.jumpSpeed = 0;
+                    
+         
+
+    }
+    public void onGroundColisionExit() {
+
+    }
 
 }
