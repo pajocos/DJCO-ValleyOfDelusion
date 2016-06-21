@@ -15,7 +15,7 @@ public class CharacterMovement : MonoBehaviour {
 
     public float PUSHBACKTIME = 10f;
     public bool grounded = false;
-
+    public bool canJump = false;
     Rigidbody rgbd;
 
     public Vector3 internalVelocity = Vector3.zero;
@@ -89,7 +89,7 @@ public class CharacterMovement : MonoBehaviour {
     }
 
     private void jumpManager(bool jump) {
-        if (jump && grounded) {
+        if (jump && grounded && canJump) {
             jumpSpeed = JumpImpulsion;
 
         } else if (!grounded) {

@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class PlayerBehaviour : MonoBehaviour {
-    public Collider groundCollider;
     public CharacterMovement movement;
     public MusicScript musicManager;
     public float dist = 1f;
@@ -21,6 +21,20 @@ public class PlayerBehaviour : MonoBehaviour {
         gems = 0;
         alive = true;
         canMove = true;
+    }
+
+    internal void FloorTriggerEnter() {
+        movement.canJump = true;
+    }
+
+    internal void FloorTriggerExit() {
+        movement.canJump = false;
+
+    }
+
+    internal void FloorTriggerStay() {
+        movement.canJump = true;
+
     }
 
     // Update is called once per frame
@@ -58,19 +72,22 @@ public class PlayerBehaviour : MonoBehaviour {
 
         }
 
-        
+        if (col.collider.tag == "Floor") {
+
+            movement.grounded = true;
+            movement.jumpSpeed = 0;
+
+
+        }
     }
 
 
     void OnCollisionStay(Collision col) {
         if (col.collider.tag == "Floor") {
-            foreach (ContactPoint c in col.contacts) {
-                if (c.thisCollider == groundCollider) {
-                    movement.grounded = true;
-                    movement.jumpSpeed = 0;
-                    break;
-                }
-            }
+
+            movement.grounded = true;
+            movement.jumpSpeed = 0;
+
         }
     }
 
@@ -104,17 +121,6 @@ public class PlayerBehaviour : MonoBehaviour {
         musicManager.StepSound(ident);
     }
 
-    public void onGroundColisionEnter() {
 
-        
-                    movement.grounded = true;
-                    movement.jumpSpeed = 0;
-                    
-         
-
-    }
-    public void onGroundColisionExit() {
-
-    }
 
 }
