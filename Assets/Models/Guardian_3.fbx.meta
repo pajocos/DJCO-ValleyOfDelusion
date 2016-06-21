@@ -1,85 +1,88 @@
 fileFormatVersion: 2
-guid: dd1f1836bdb8c0841b7822840f7183d8
-timeCreated: 1466447106
+guid: d4880c8917b49a04794d6a1ba781fd54
+timeCreated: 1466527753
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Body
-    100002: chest
-    100004: eye1
-    100006: eye2
-    100008: eye3
-    100010: eye4
-    100012: foot _target.L
-    100014: foot _target.R
-    100016: foot.L
-    100018: foot.R
-    100020: //RootNode
-    100022: head
-    100024: head_end
-    100026: hips
-    100028: ik.L
-    100030: ik.L_end
-    100032: ik.R
-    100034: ik.R_end
-    100036: metarig
-    100038: neck
-    100040: shin.L
-    100042: shin.L_end
-    100044: shin.R
-    100046: shin.R_end
-    100048: shoulder.L
-    100050: shoulder.R
-    100052: toe.L
-    100054: toe.L_end
-    100056: toe.R
-    100058: toe.R_end
-    100060: upper_arm.L
-    100062: upper_arm.L_end
-    100064: upper_arm.R
-    100066: upper_arm.R_end
-    400000: Body
-    400002: chest
-    400004: eye1
-    400006: eye2
-    400008: eye3
-    400010: eye4
-    400012: foot _target.L
-    400014: foot _target.R
-    400016: foot.L
-    400018: foot.R
-    400020: //RootNode
-    400022: head
-    400024: head_end
-    400026: hips
-    400028: ik.L
-    400030: ik.L_end
-    400032: ik.R
-    400034: ik.R_end
-    400036: metarig
-    400038: neck
-    400040: shin.L
-    400042: shin.L_end
-    400044: shin.R
-    400046: shin.R_end
-    400048: shoulder.L
-    400050: shoulder.R
-    400052: toe.L
-    400054: toe.L_end
-    400056: toe.R
-    400058: toe.R_end
-    400060: upper_arm.L
-    400062: upper_arm.L_end
-    400064: upper_arm.R
-    400066: upper_arm.R_end
+    100000: //RootNode
+    100002: Body
+    100004: chest
+    100006: colar_bone.L
+    100008: colar_bone.R
+    100010: eye1
+    100012: eye2
+    100014: eye3
+    100016: eye4
+    100018: foot _target.L
+    100020: foot _target.R
+    100022: foot.L
+    100024: foot.R
+    100026: head
+    100028: head_end
+    100030: hips
+    100032: ik.L
+    100034: ik.L_end
+    100036: ik.R
+    100038: ik.R_end
+    100040: metarig
+    100042: neck
+    100044: shin.L
+    100046: shin.L_end
+    100048: shin.R
+    100050: shin.R_end
+    100052: shoulder.L
+    100054: shoulder.R
+    100056: toe.L
+    100058: toe.L_end
+    100060: toe.R
+    100062: toe.R_end
+    100064: upper_arm.L
+    100066: upper_arm.L_end
+    100068: upper_arm.R
+    100070: upper_arm.R_end
+    400000: //RootNode
+    400002: Body
+    400004: chest
+    400006: colar_bone.L
+    400008: colar_bone.R
+    400010: eye1
+    400012: eye2
+    400014: eye3
+    400016: eye4
+    400018: foot _target.L
+    400020: foot _target.R
+    400022: foot.L
+    400024: foot.R
+    400026: head
+    400028: head_end
+    400030: hips
+    400032: ik.L
+    400034: ik.L_end
+    400036: ik.R
+    400038: ik.R_end
+    400040: metarig
+    400042: neck
+    400044: shin.L
+    400046: shin.L_end
+    400048: shin.R
+    400050: shin.R_end
+    400052: shoulder.L
+    400054: shoulder.R
+    400056: toe.L
+    400058: toe.L_end
+    400060: toe.R
+    400062: toe.R_end
+    400064: upper_arm.L
+    400066: upper_arm.L_end
+    400068: upper_arm.R
+    400070: upper_arm.R_end
     4300000: Body
     4300002: eye1
     4300004: eye2
     4300006: eye3
     4300008: eye4
-    7400000: "metarig|Walk Cycle_ Guardi\xE3o "
-    7400002: "eye1|Walk Cycle_ Guardi\xE3o "
+    7400000: metarig|idle
     9500000: //RootNode
     13700000: Body
     13700002: eye1
@@ -106,199 +109,7 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: "metarig|Walk Cycle_ Guardi\xE3o "
-      takeName: "metarig|Walk Cycle_ Guardi\xE3o "
-      firstFrame: 0
-      lastFrame: 119
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: Body
-        weight: 1
-      - path: Body/eye1
-        weight: 1
-      - path: Body/eye2
-        weight: 1
-      - path: Body/eye3
-        weight: 1
-      - path: Body/eye4
-        weight: 1
-      - path: metarig
-        weight: 1
-      - path: metarig/foot _target.L
-        weight: 1
-      - path: metarig/foot _target.L/foot.L
-        weight: 1
-      - path: metarig/foot _target.L/foot.L/toe.L
-        weight: 1
-      - path: metarig/foot _target.L/foot.L/toe.L/toe.L_end
-        weight: 1
-      - path: metarig/foot _target.L/ik.L
-        weight: 1
-      - path: metarig/foot _target.L/ik.L/ik.L_end
-        weight: 1
-      - path: metarig/foot _target.R
-        weight: 1
-      - path: metarig/foot _target.R/foot.R
-        weight: 1
-      - path: metarig/foot _target.R/foot.R/toe.R
-        weight: 1
-      - path: metarig/foot _target.R/foot.R/toe.R/toe.R_end
-        weight: 1
-      - path: metarig/foot _target.R/ik.R
-        weight: 1
-      - path: metarig/foot _target.R/ik.R/ik.R_end
-        weight: 1
-      - path: metarig/hips
-        weight: 1
-      - path: metarig/hips/chest
-        weight: 1
-      - path: metarig/hips/chest/neck
-        weight: 1
-      - path: metarig/hips/chest/neck/head
-        weight: 1
-      - path: metarig/hips/chest/neck/head/head_end
-        weight: 1
-      - path: metarig/hips/chest/shoulder.L
-        weight: 1
-      - path: metarig/hips/chest/shoulder.L/upper_arm.L
-        weight: 1
-      - path: metarig/hips/chest/shoulder.L/upper_arm.L/upper_arm.L_end
-        weight: 1
-      - path: metarig/hips/chest/shoulder.R
-        weight: 1
-      - path: metarig/hips/chest/shoulder.R/upper_arm.R
-        weight: 1
-      - path: metarig/hips/chest/shoulder.R/upper_arm.R/upper_arm.R_end
-        weight: 1
-      - path: metarig/hips/shin.L
-        weight: 1
-      - path: metarig/hips/shin.L/shin.L_end
-        weight: 1
-      - path: metarig/hips/shin.R
-        weight: 1
-      - path: metarig/hips/shin.R/shin.R_end
-        weight: 1
-      maskType: 0
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: "eye1|Walk Cycle_ Guardi\xE3o "
-      takeName: "eye1|Walk Cycle_ Guardi\xE3o "
-      firstFrame: 0
-      lastFrame: 119
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: Body
-        weight: 1
-      - path: Body/eye1
-        weight: 1
-      - path: Body/eye2
-        weight: 1
-      - path: Body/eye3
-        weight: 1
-      - path: Body/eye4
-        weight: 1
-      - path: metarig
-        weight: 1
-      - path: metarig/foot _target.L
-        weight: 1
-      - path: metarig/foot _target.L/foot.L
-        weight: 1
-      - path: metarig/foot _target.L/foot.L/toe.L
-        weight: 1
-      - path: metarig/foot _target.L/foot.L/toe.L/toe.L_end
-        weight: 1
-      - path: metarig/foot _target.L/ik.L
-        weight: 1
-      - path: metarig/foot _target.L/ik.L/ik.L_end
-        weight: 1
-      - path: metarig/foot _target.R
-        weight: 1
-      - path: metarig/foot _target.R/foot.R
-        weight: 1
-      - path: metarig/foot _target.R/foot.R/toe.R
-        weight: 1
-      - path: metarig/foot _target.R/foot.R/toe.R/toe.R_end
-        weight: 1
-      - path: metarig/foot _target.R/ik.R
-        weight: 1
-      - path: metarig/foot _target.R/ik.R/ik.R_end
-        weight: 1
-      - path: metarig/hips
-        weight: 1
-      - path: metarig/hips/chest
-        weight: 1
-      - path: metarig/hips/chest/neck
-        weight: 1
-      - path: metarig/hips/chest/neck/head
-        weight: 1
-      - path: metarig/hips/chest/neck/head/head_end
-        weight: 1
-      - path: metarig/hips/chest/shoulder.L
-        weight: 1
-      - path: metarig/hips/chest/shoulder.L/upper_arm.L
-        weight: 1
-      - path: metarig/hips/chest/shoulder.L/upper_arm.L/upper_arm.L_end
-        weight: 1
-      - path: metarig/hips/chest/shoulder.R
-        weight: 1
-      - path: metarig/hips/chest/shoulder.R/upper_arm.R
-        weight: 1
-      - path: metarig/hips/chest/shoulder.R/upper_arm.R/upper_arm.R_end
-        weight: 1
-      - path: metarig/hips/shin.L
-        weight: 1
-      - path: metarig/hips/shin.L/shin.L_end
-        weight: 1
-      - path: metarig/hips/shin.R
-        weight: 1
-      - path: metarig/hips/shin.R/shin.R_end
-        weight: 1
-      maskType: 0
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
