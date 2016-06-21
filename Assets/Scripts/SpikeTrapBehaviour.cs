@@ -5,7 +5,7 @@ public class SpikeTrapBehaviour : EnemyWithAttackCollider, ITriggableBehauviour{
     
     void Update()
     {
-        UpdateAttackCollider();
+        
     }
 
     public void RemoteTrigger()

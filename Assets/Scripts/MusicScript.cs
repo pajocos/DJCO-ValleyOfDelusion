@@ -66,13 +66,11 @@ public class MusicScript : MonoBehaviour {
             if (!Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.RightShift)) {
                 return;
             }
-            Debug.Log("index:" + vl);
             currentStep = stone_run[vl];
         } else if (ident.Equals("RightFootRun")) {
             if (!Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.RightShift)) {
                 return;
             }
-            Debug.Log("index:" + vlImp);
 
             currentStep = stone_run[vlImp];
 
@@ -82,7 +80,7 @@ public class MusicScript : MonoBehaviour {
         }
         animationSound.Stop();
         animationSound.clip = currentStep;
-        Debug.Log(currentStep.name);
+        //Debug.Log(currentStep.name);
         animationSound.Play();
     }
 }
