@@ -31,6 +31,7 @@ public class MusicScript : MonoBehaviour {
         if (other.tag == "MusicDetector" && background) {
             for (int i = 0; i < triggers.Length; i++) {
                 if (triggers[i] == other) {
+                    Debug.Log("trigger with index: " + i);
                     savedIndex = i;
                 }
             }
@@ -42,6 +43,7 @@ public class MusicScript : MonoBehaviour {
         if (background) {
             backgroundMusic.clip = audios[savedIndex];
             backgroundMusic.Play();
+            Debug.Log(backgroundMusic.clip.name);
             Invoke("UpdateMusic", audios[savedIndex].length);
         }
     }
