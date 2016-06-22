@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using UnityEngine.SceneManagement;
 
 public class PlayerBehaviour : MonoBehaviour {
     public CharacterMovement movement;
@@ -43,8 +44,21 @@ public class PlayerBehaviour : MonoBehaviour {
 
     }
 
+    void Died()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     // Update is called once per frame
     void FixedUpdate() {
+        if (!alive)
+        {
+            //animação de morte!!!
+            //som de morte
+            //mostrar qualquer coisa no ecra
+
+            Invoke("Died", 2);
+        }
         if (Mathf.Abs(movement.jumpSpeed) > MaxJumpSpeed)
             Kill();
 
