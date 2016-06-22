@@ -55,7 +55,7 @@ public class PlayerBehaviour : MonoBehaviour {
         if (!alive)
         {
             //animação de morte!!!
-
+            //som de morte
             //mostrar qualquer coisa no ecra
 
             Invoke("Died", 5);
@@ -122,9 +122,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
 
     void OnTriggerEnter(Collider col) {
-        Debug.Log("cenas2");
         if (col.tag == "Water") {
-            Debug.Log("cenas");
             Kill();
         }
     }
