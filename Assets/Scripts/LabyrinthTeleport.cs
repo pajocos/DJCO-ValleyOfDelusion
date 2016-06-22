@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class LabyrinthTeleport : MonoBehaviour
 {
 
+    public int Scene = 1;
     public Vector3 Destination;
 
     void OnCollisionEnter(Collision col)
@@ -12,7 +13,7 @@ public class LabyrinthTeleport : MonoBehaviour
         if (col.collider.tag == "Player")
         {
             PlayerBehaviour.StartPosition = Destination;
-             SceneManager.LoadScene(1);
+             SceneManager.LoadScene(Scene);
 
         }
 
