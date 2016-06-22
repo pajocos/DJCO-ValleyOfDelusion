@@ -13,6 +13,8 @@ public class MovingEnemyScript : MonoBehaviour
     private NavMeshAgent agent;
     private int destPoint;
 
+    public MusicScript music;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -42,5 +44,9 @@ public class MovingEnemyScript : MonoBehaviour
             agent.destination = Player.transform.position;
 
         }
+    }
+
+    void StepSound(string str) {
+        music.StepSound(str);
     }
 }

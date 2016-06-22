@@ -72,7 +72,7 @@ ModelImporter:
     4300000: Cube
     4300002: eye.L
     4300004: eye.R
-    7400000: metarig|metarigAction.000
+    7400000: guardiao1_walk
     9500000: //RootNode
     13700000: Cube
     13700002: eye.L
@@ -99,7 +99,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: metarig|metarigAction.000
+      name: guardiao1_walk
       takeName: metarig|metarigAction.000
       firstFrame: 0
       lastFrame: 118
