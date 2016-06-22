@@ -14,11 +14,12 @@ public class MusicScript : MonoBehaviour {
     public AudioClip[] stone_run;
     private AudioClip currentStep;
     private int savedIndex = 0;
-
+    public bool background;
     // Use this for initialization
     void Start() {
-        Invoke("UpdateMusic", audios[savedIndex].length);
-
+        if (background) {
+            Invoke("UpdateMusic", audios[savedIndex].length);
+        }
     }
 
     // Update is called once per frame
@@ -27,27 +28,27 @@ public class MusicScript : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider other) {
-
-        for (int i = 0; i < triggers.Length; i++) {
-            if (triggers[i] == other) {
-                savedIndex = i;
+        if (other.tag == "MusicDetector" && background) {
+            for (int i = 0; i < triggers.Length; i++) {
+                if (triggers[i] == other) {
+                    savedIndex = i;
+                }
             }
         }
-
 
     }
 
     void UpdateMusic() {
-
-        backgroundMusic.clip = audios[savedIndex];
-        backgroundMusic.Play();
-        Invoke("UpdateMusic", audios[savedIndex].length);
-
+        if (background) {
+            backgroundMusic.clip = audios[savedIndex];
+            backgroundMusic.Play();
+            Invoke("UpdateMusic", audios[savedIndex].length);
+        }
     }
 
     public void StepSound(string ident) {
 
-        int vl = (int)(Random.value * 20);
+        int vl = (int)(Random.value * stone_steps.Length);
         int vlImp = 1;
         if (vl % 2 == 0) {
             vlImp = vl + 1;

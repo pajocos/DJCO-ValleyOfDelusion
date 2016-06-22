@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: d4880c8917b49a04794d6a1ba781fd54
-timeCreated: 1466527753
+guid: 1d0c0db7ea12b8749a9b8d1a39723147
+timeCreated: 1466591714
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -82,7 +82,7 @@ ModelImporter:
     4300004: eye2
     4300006: eye3
     4300008: eye4
-    7400000: metarig|idle
+    7400000: guardiao3_idle
     9500000: //RootNode
     13700000: Body
     13700002: eye1
@@ -109,7 +109,107 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: guardiao3_idle
+      takeName: "metarig|Guardi\xE3o3_Idle"
+      firstFrame: 0
+      lastFrame: 8
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 1
+      - path: Body/eye1
+        weight: 1
+      - path: Body/eye2
+        weight: 1
+      - path: Body/eye3
+        weight: 1
+      - path: Body/eye4
+        weight: 1
+      - path: metarig
+        weight: 1
+      - path: metarig/foot _target.L
+        weight: 1
+      - path: metarig/foot _target.L/foot.L
+        weight: 1
+      - path: metarig/foot _target.L/foot.L/toe.L
+        weight: 1
+      - path: metarig/foot _target.L/foot.L/toe.L/toe.L_end
+        weight: 1
+      - path: metarig/foot _target.L/ik.L
+        weight: 1
+      - path: metarig/foot _target.L/ik.L/ik.L_end
+        weight: 1
+      - path: metarig/foot _target.R
+        weight: 1
+      - path: metarig/foot _target.R/foot.R
+        weight: 1
+      - path: metarig/foot _target.R/foot.R/toe.R
+        weight: 1
+      - path: metarig/foot _target.R/foot.R/toe.R/toe.R_end
+        weight: 1
+      - path: metarig/foot _target.R/ik.R
+        weight: 1
+      - path: metarig/foot _target.R/ik.R/ik.R_end
+        weight: 1
+      - path: metarig/hips
+        weight: 1
+      - path: metarig/hips/chest
+        weight: 1
+      - path: metarig/hips/chest/colar_bone.L
+        weight: 1
+      - path: metarig/hips/chest/colar_bone.L/shoulder.L
+        weight: 1
+      - path: metarig/hips/chest/colar_bone.L/shoulder.L/upper_arm.L
+        weight: 1
+      - path: metarig/hips/chest/colar_bone.L/shoulder.L/upper_arm.L/upper_arm.L_end
+        weight: 1
+      - path: metarig/hips/chest/colar_bone.R
+        weight: 1
+      - path: metarig/hips/chest/colar_bone.R/shoulder.R
+        weight: 1
+      - path: metarig/hips/chest/colar_bone.R/shoulder.R/upper_arm.R
+        weight: 1
+      - path: metarig/hips/chest/colar_bone.R/shoulder.R/upper_arm.R/upper_arm.R_end
+        weight: 1
+      - path: metarig/hips/chest/neck
+        weight: 1
+      - path: metarig/hips/chest/neck/head
+        weight: 1
+      - path: metarig/hips/chest/neck/head/head_end
+        weight: 1
+      - path: metarig/hips/shin.L
+        weight: 1
+      - path: metarig/hips/shin.L/shin.L_end
+        weight: 1
+      - path: metarig/hips/shin.R
+        weight: 1
+      - path: metarig/hips/shin.R/shin.R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []

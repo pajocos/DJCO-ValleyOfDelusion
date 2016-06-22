@@ -37,7 +37,7 @@ public class EnemyWithAttackCollider : MonoBehaviour {
             pushCountDown = 0f;
         }
         if (pushCountDown == 0) { 
-            Player.movement.PushBack(knockBack, transform.forward);
+            Player.movement.PushBack(knockBack, Player.transform.forward);
             pushCountDown = pushDelay;
             attacking = false;
         }

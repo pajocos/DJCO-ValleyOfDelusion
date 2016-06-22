@@ -104,13 +104,16 @@ public class CharacterMovement : MonoBehaviour {
         //print("lerptime: "+lerpTime);
         if (lerpTime <= PUSHBACKTIME)
             transform.position = Vector3.Lerp(lerpStartPos, lerpEndPos, lerpTime / PUSHBACKTIME);
-        else
+        else {
             lerpingBack = false;
+        }
     }
 
 
     public void PushBack(float distance, Vector3 direction) {
         lerpingBack = true;
+        GetComponent<Animator>().SetTrigger("KnockBack");
+
         lerpTime = 0;
 
         direction.Normalize();
