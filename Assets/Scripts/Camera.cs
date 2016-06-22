@@ -3,12 +3,11 @@
 public class Camera : MonoBehaviour
 {
     public PlayerBehaviour player;
+    public Transform target;
     public float damping;
     public Vector3 distance = new Vector3(0,5,10);
 
     Vector3 offset;
-
-    private bool canMove;
 
     void Start()
     {
@@ -20,18 +19,18 @@ public class Camera : MonoBehaviour
 
     void LateUpdate()
     {
-        var velocity = player.movement.internalVelocity;
+        var mouse = player.movement.internalVelocity == Vector3.zero && player.movement.grounded;
 
-        if (Input.GetMouseButtonDown(0) && player.movement.internalVelocity == Vector3.zero)
+        if (Input.GetMouseButtonDown(0) && mouse)
             player.canMove = false;
-        else if (Input.GetMouseButton(0) && player.movement.internalVelocity == Vector3.zero)
+        else if (Input.GetMouseButton(0) && mouse)
         {
             transform.RotateAround(player.transform.position, player.transform.up,
                 Input.GetAxis("Mouse X")*90*Time.deltaTime);
             transform.RotateAround(player.transform.position, player.transform.right,
                 Input.GetAxis("Mouse Y")*90*Time.deltaTime);
         }
-        else if (Input.GetMouseButtonUp(0) && player.movement.internalVelocity == Vector3.zero)
+        else if (Input.GetMouseButtonUp(0) && mouse)
         {
             player.canMove = true;
         }
@@ -44,6 +43,6 @@ public class Camera : MonoBehaviour
             Quaternion rotation = Quaternion.Euler(0, angleY, 0);
             transform.position = player.transform.position - (rotation*offset);
         }
-        transform.LookAt(player.transform);
+        transform.LookAt(target);
     }
 }
