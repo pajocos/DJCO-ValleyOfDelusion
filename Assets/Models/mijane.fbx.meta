@@ -1,42 +1,42 @@
 fileFormatVersion: 2
-guid: 1bf3320185ca94a4587e643ed0e4d75a
-timeCreated: 1466349469
+guid: 4622776596bdd4d40a488248a2bee3b1
+timeCreated: 1466564648
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Cabelo
-    100002: chest
-    100004: corpo
-    100006: esqueleto
-    100008: f_middle.01.L
-    100010: f_middle.01.L_end
-    100012: foot.L
-    100014: foot.R
-    100016: forearm.L
-    100018: forearm.R
-    100020: hand.R
-    100022: hand.R.001
-    100024: hand.R.001_end
-    100026: head
-    100028: head_end
-    100030: heel.02.L
-    100032: heel.02.L_end
-    100034: heel.02.R
-    100036: heel.02.R_end
-    100038: hips
-    100040: joelho_pole
-    100042: joelho_pole_end
-    100044: joelho_pole_r
-    100046: joelho_pole_r_end
-    100048: leg.c.l
-    100050: leg.c.l_end
-    100052: leg.c.r
-    100054: leg.c.r_end
-    100056: leg_control_L
-    100058: leg_control_r
-    100060: Mascara
-    100062: //RootNode
+    100000: //RootNode
+    100002: Cabelo
+    100004: chest
+    100006: corpo
+    100008: esqueleto
+    100010: f_middle.01.L
+    100012: f_middle.01.L_end
+    100014: foot.L
+    100016: foot.R
+    100018: forearm.L
+    100020: forearm.R
+    100022: hand.R
+    100024: hand.R.001
+    100026: hand.R.001_end
+    100028: head
+    100030: head_end
+    100032: heel.02.L
+    100034: heel.02.L_end
+    100036: heel.02.R
+    100038: heel.02.R_end
+    100040: hips
+    100042: joelho_pole
+    100044: joelho_pole_end
+    100046: joelho_pole_r
+    100048: joelho_pole_r_end
+    100050: leg.c.l
+    100052: leg.c.l_end
+    100054: leg.c.r
+    100056: leg.c.r_end
+    100058: leg_control_L
+    100060: leg_control_r
+    100062: Mascara
     100064: neck
     100066: palm.02.L
     100068: shin.L
@@ -58,38 +58,38 @@ ModelImporter:
     100100: toe.R_end
     100102: upper_arm.L
     100104: upper_arm.R
-    400000: Cabelo
-    400002: chest
-    400004: corpo
-    400006: esqueleto
-    400008: f_middle.01.L
-    400010: f_middle.01.L_end
-    400012: foot.L
-    400014: foot.R
-    400016: forearm.L
-    400018: forearm.R
-    400020: hand.R
-    400022: hand.R.001
-    400024: hand.R.001_end
-    400026: head
-    400028: head_end
-    400030: heel.02.L
-    400032: heel.02.L_end
-    400034: heel.02.R
-    400036: heel.02.R_end
-    400038: hips
-    400040: joelho_pole
-    400042: joelho_pole_end
-    400044: joelho_pole_r
-    400046: joelho_pole_r_end
-    400048: leg.c.l
-    400050: leg.c.l_end
-    400052: leg.c.r
-    400054: leg.c.r_end
-    400056: leg_control_L
-    400058: leg_control_r
-    400060: Mascara
-    400062: //RootNode
+    400000: //RootNode
+    400002: Cabelo
+    400004: chest
+    400006: corpo
+    400008: esqueleto
+    400010: f_middle.01.L
+    400012: f_middle.01.L_end
+    400014: foot.L
+    400016: foot.R
+    400018: forearm.L
+    400020: forearm.R
+    400022: hand.R
+    400024: hand.R.001
+    400026: hand.R.001_end
+    400028: head
+    400030: head_end
+    400032: heel.02.L
+    400034: heel.02.L_end
+    400036: heel.02.R
+    400038: heel.02.R_end
+    400040: hips
+    400042: joelho_pole
+    400044: joelho_pole_end
+    400046: joelho_pole_r
+    400048: joelho_pole_r_end
+    400050: leg.c.l
+    400052: leg.c.l_end
+    400054: leg.c.r
+    400056: leg.c.r_end
+    400058: leg_control_L
+    400060: leg_control_r
+    400062: Mascara
     400064: neck
     400066: palm.02.L
     400068: shin.L
@@ -114,7 +114,8 @@ ModelImporter:
     4300000: Cabelo
     4300002: corpo
     4300004: Mascara
-    7400000: mijane_walk
+    7400000: esqueleto|Mijane_Idle
+    7400002: Cabelo|Mijane_Idle
     9500000: //RootNode
     13700000: Cabelo
     13700002: corpo
@@ -139,148 +140,7 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: mijane_walk
-      takeName: esqueleto|esqueletoAction
-      firstFrame: 0
-      lastFrame: 39
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events:
-      - time: 0
-        functionName: NewEvent
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      transformMask:
-      - path: 
-        weight: 1
-      - path: Cabelo
-        weight: 1
-      - path: corpo
-        weight: 1
-      - path: esqueleto
-        weight: 1
-      - path: esqueleto/hips
-        weight: 1
-      - path: esqueleto/hips/spine
-        weight: 1
-      - path: esqueleto/hips/spine/chest
-        weight: 1
-      - path: esqueleto/hips/spine/chest/neck
-        weight: 1
-      - path: esqueleto/hips/spine/chest/neck/head
-        weight: 1
-      - path: esqueleto/hips/spine/chest/neck/head/head_end
-        weight: 1
-      - path: esqueleto/hips/spine/chest/shoulder.L
-        weight: 1
-      - path: esqueleto/hips/spine/chest/shoulder.L/upper_arm.L
-        weight: 1
-      - path: esqueleto/hips/spine/chest/shoulder.L/upper_arm.L/forearm.L
-        weight: 1
-      - path: esqueleto/hips/spine/chest/shoulder.L/upper_arm.L/forearm.L/palm.02.L
-        weight: 1
-      - path: esqueleto/hips/spine/chest/shoulder.L/upper_arm.L/forearm.L/palm.02.L/f_middle.01.L
-        weight: 1
-      - path: esqueleto/hips/spine/chest/shoulder.L/upper_arm.L/forearm.L/palm.02.L/f_middle.01.L/f_middle.01.L_end
-        weight: 1
-      - path: esqueleto/hips/spine/chest/shoulder.L/upper_arm.L/forearm.L/thumb.02.L
-        weight: 1
-      - path: esqueleto/hips/spine/chest/shoulder.L/upper_arm.L/forearm.L/thumb.02.L/thumb.03.L
-        weight: 1
-      - path: esqueleto/hips/spine/chest/shoulder.L/upper_arm.L/forearm.L/thumb.02.L/thumb.03.L/thumb.03.L_end
-        weight: 1
-      - path: esqueleto/hips/spine/chest/shoulder.R
-        weight: 1
-      - path: esqueleto/hips/spine/chest/shoulder.R/upper_arm.R
-        weight: 1
-      - path: esqueleto/hips/spine/chest/shoulder.R/upper_arm.R/forearm.R
-        weight: 1
-      - path: esqueleto/hips/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R
-        weight: 1
-      - path: esqueleto/hips/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/hand.R.001
-        weight: 1
-      - path: esqueleto/hips/spine/chest/shoulder.R/upper_arm.R/forearm.R/hand.R/hand.R.001/hand.R.001_end
-        weight: 1
-      - path: esqueleto/hips/spine/chest/shoulder.R/upper_arm.R/forearm.R/thumb.01.R
-        weight: 1
-      - path: esqueleto/hips/spine/chest/shoulder.R/upper_arm.R/forearm.R/thumb.01.R/thumb.02.R
-        weight: 1
-      - path: esqueleto/hips/spine/chest/shoulder.R/upper_arm.R/forearm.R/thumb.01.R/thumb.02.R/thumb.02.R_end
-        weight: 1
-      - path: esqueleto/hips/thigh.L
-        weight: 1
-      - path: esqueleto/hips/thigh.L/shin.L
-        weight: 1
-      - path: esqueleto/hips/thigh.L/shin.L/foot.L
-        weight: 1
-      - path: esqueleto/hips/thigh.L/shin.L/foot.L/toe.L
-        weight: 1
-      - path: esqueleto/hips/thigh.L/shin.L/foot.L/toe.L/toe.L_end
-        weight: 1
-      - path: esqueleto/hips/thigh.L/shin.L/heel.02.L
-        weight: 1
-      - path: esqueleto/hips/thigh.L/shin.L/heel.02.L/heel.02.L_end
-        weight: 1
-      - path: esqueleto/hips/thigh.R
-        weight: 1
-      - path: esqueleto/hips/thigh.R/shin.R
-        weight: 1
-      - path: esqueleto/hips/thigh.R/shin.R/foot.R
-        weight: 1
-      - path: esqueleto/hips/thigh.R/shin.R/foot.R/toe.R
-        weight: 1
-      - path: esqueleto/hips/thigh.R/shin.R/foot.R/toe.R/toe.R_end
-        weight: 1
-      - path: esqueleto/hips/thigh.R/shin.R/heel.02.R
-        weight: 1
-      - path: esqueleto/hips/thigh.R/shin.R/heel.02.R/heel.02.R_end
-        weight: 1
-      - path: esqueleto/joelho_pole
-        weight: 1
-      - path: esqueleto/joelho_pole/joelho_pole_end
-        weight: 1
-      - path: esqueleto/joelho_pole_r
-        weight: 1
-      - path: esqueleto/joelho_pole_r/joelho_pole_r_end
-        weight: 1
-      - path: esqueleto/leg_control_L
-        weight: 1
-      - path: esqueleto/leg_control_L/leg.c.l
-        weight: 1
-      - path: esqueleto/leg_control_L/leg.c.l/leg.c.l_end
-        weight: 1
-      - path: esqueleto/leg_control_r
-        weight: 1
-      - path: esqueleto/leg_control_r/leg.c.r
-        weight: 1
-      - path: esqueleto/leg_control_r/leg.c.r/leg.c.r_end
-        weight: 1
-      - path: Mascara
-        weight: 1
-      maskType: 0
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
