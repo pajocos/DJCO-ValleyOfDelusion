@@ -7,6 +7,8 @@ public class PlayerBehaviour : MonoBehaviour {
     public MusicScript musicManager;
     public float dist = 1f;
 
+    static public Vector3 StartPosition;
+
     public bool canMove;
 
     //if his speed is greater than MaxSpeed, the player dies
@@ -21,6 +23,10 @@ public class PlayerBehaviour : MonoBehaviour {
         gems = 0;
         alive = true;
         canMove = true;
+
+        if (StartPosition != Vector3.zero)
+            transform.position = StartPosition;
+
     }
 
     internal void FloorTriggerEnter() {
