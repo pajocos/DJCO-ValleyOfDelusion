@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using UnityEngine.SceneManagement;
 
 public class PlayerBehaviour : MonoBehaviour {
     public CharacterMovement movement;
@@ -41,6 +42,11 @@ public class PlayerBehaviour : MonoBehaviour {
     internal void FloorTriggerStay() {
         movement.canJump = true;
 
+    }
+
+    void Died()
+    {
+        SceneManager.LoadScene(0);
     }
 
     // Update is called once per frame
