@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using UnityEngine.SceneManagement;
 
 public class PlayerBehaviour : MonoBehaviour {
     public CharacterMovement movement;
@@ -43,8 +44,23 @@ public class PlayerBehaviour : MonoBehaviour {
 
     }
 
+    void Died()
+    {
+        SceneManager.LoadScene(0);
+    }
+    
     // Update is called once per frame
     void FixedUpdate() {
+
+        if (!alive)
+        {
+            //animação de morte!!!
+
+            //mostrar qualquer coisa no ecra
+
+            Invoke("Died", 5);
+        }
+
         if (Mathf.Abs(movement.jumpSpeed) > MaxJumpSpeed)
             Kill();
 
@@ -106,7 +122,9 @@ public class PlayerBehaviour : MonoBehaviour {
 
 
     void OnTriggerEnter(Collider col) {
+        Debug.Log("cenas2");
         if (col.tag == "Water") {
+            Debug.Log("cenas");
             Kill();
         }
     }
@@ -120,7 +138,7 @@ public class PlayerBehaviour : MonoBehaviour {
     }
 
     public void Kill() {
-        print("dead");
+
         alive = false;
     }
     public void StepSound(string ident) {
