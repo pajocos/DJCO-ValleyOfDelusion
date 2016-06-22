@@ -45,6 +45,14 @@ public class PlayerBehaviour : MonoBehaviour {
 
     // Update is called once per frame
     void FixedUpdate() {
+        if (!alive)
+        {
+            //animação de morte!!!
+            //som de morte
+            //mostrar qualquer coisa no ecra
+
+            Invoke("Died", 2);
+        }
         if (Mathf.Abs(movement.jumpSpeed) > MaxJumpSpeed)
             Kill();
 
@@ -107,7 +115,6 @@ public class PlayerBehaviour : MonoBehaviour {
 
     void OnTriggerEnter(Collider col) {
         if (col.tag == "Water") {
-            print("kill);");
             Kill();
         }
     }
