@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System;
 using UnityEngine.SceneManagement;
@@ -7,6 +8,7 @@ public class PlayerBehaviour : MonoBehaviour {
     public CharacterMovement movement;
     public MusicScript musicManager;
     public float dist = 1f;
+    public Image[] canvasGems;
 
     static public Vector3 StartPosition;
 
@@ -16,7 +18,7 @@ public class PlayerBehaviour : MonoBehaviour {
     public float MaxJumpSpeed = 100f;
 
     private bool alive;
-    private int gems;
+    static public int gems = 0;
 
     // Use this for initialization
     void Start() {
@@ -87,9 +89,13 @@ public class PlayerBehaviour : MonoBehaviour {
     void OnCollisionEnter(Collision col) {
         if (col.collider.tag == "Gem") {
             gems++;
+
+            Debug.Log(gems);
+
             col.collider.GetComponentInParent<SphereCollider>().enabled = false;
             col.collider.GetComponentInParent<MeshRenderer>().enabled = false;
 
+            canvasGems[(gems - 1)].enabled = true;
         }
 
         if (col.collider.tag == "Floor") {
@@ -97,8 +103,6 @@ public class PlayerBehaviour : MonoBehaviour {
             movement.grounded = true;
             movement.jumpSpeed = 0;
             GetComponent<Animator>().SetBool("Midair", false);
-
-
         }
     }
 
@@ -109,8 +113,6 @@ public class PlayerBehaviour : MonoBehaviour {
             movement.grounded = true;
             movement.jumpSpeed = 0;
             GetComponent<Animator>().SetBool("Midair",false);
-
-
         }
     }
 
