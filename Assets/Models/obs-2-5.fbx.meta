@@ -110,22 +110,22 @@ ModelImporter:
     4300032: Torus.001
     4300034: Plane
     4300036: Body.000
-    7400000: Armature.003|Armature.001Action.001
-    7400002: Armature.003|Armature.001Action.002
-    7400004: Armature.003|ArmatureAction
-    7400006: Armature.003|ArmatureAction.002
-    7400008: Armature.001|Armature.001Action.001
-    7400010: Armature.001|Armature.001Action.002
-    7400012: Armature.001|ArmatureAction
-    7400014: Armature.001|ArmatureAction.002
-    7400016: Armature.002|Armature.001Action.001
-    7400018: Armature.002|Armature.001Action.002
-    7400020: Armature.002|ArmatureAction
-    7400022: Armature.002|ArmatureAction.002
-    7400024: Armature|Armature.001Action.001
-    7400026: Armature|Armature.001Action.002
-    7400028: Armature|ArmatureAction
-    7400030: Armature|ArmatureAction.002
+    7400000: Arm-03.001.001
+    7400002: Arm-03.001.002
+    7400004: Arm-003.arm
+    7400006: Arm-03.Arm.002
+    7400008: Arm-01.001.001
+    7400010: Arm-01.001.002
+    7400012: Arm-01.Arm
+    7400014: Arm-01.Arm.002
+    7400016: Arm-01.001.001
+    7400018: Arm-02.001.002
+    7400020: Arm-002.arm
+    7400022: Arm-002.arm.002
+    7400024: Arm.001.001
+    7400026: Arm.001.001
+    7400028: Arm.arm
+    7400030: Arm.arm.002
     9500000: //RootNode
     13700000: Sphere.000_MeshPart0
     13700002: Sphere.000_MeshPart1
@@ -159,7 +159,1607 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Arm-03.001.001
+      takeName: Armature.003|Armature.001Action.001
+      firstFrame: 0
+      lastFrame: 99
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/Bone_end 3
+        weight: 1
+      - path: Armature.001
+        weight: 1
+      - path: Armature.001/Bone 1
+        weight: 1
+      - path: Armature.001/Bone 1/Bone_end
+        weight: 1
+      - path: Armature.002
+        weight: 1
+      - path: Armature.002/Bone 2
+        weight: 1
+      - path: Armature.002/Bone 2/Bone_end 1
+        weight: 1
+      - path: Armature.003
+        weight: 1
+      - path: Armature.003/Bone 3
+        weight: 1
+      - path: Armature.003/Bone 3/Bone_end 2
+        weight: 1
+      - path: Body.000
+        weight: 1
+      - path: Body.001
+        weight: 1
+      - path: Body.002
+        weight: 1
+      - path: Body.003
+        weight: 1
+      - path: Plane
+        weight: 1
+      - path: Plane.002
+        weight: 1
+      - path: Plane.003
+        weight: 1
+      - path: Sphere.000
+        weight: 1
+      - path: Sphere.000/Sphere.000_MeshPart0
+        weight: 1
+      - path: Sphere.000/Sphere.000_MeshPart1
+        weight: 1
+      - path: Sphere.001
+        weight: 1
+      - path: Sphere.001/Sphere.001_MeshPart0
+        weight: 1
+      - path: Sphere.001/Sphere.001_MeshPart1
+        weight: 1
+      - path: Sphere.002
+        weight: 1
+      - path: Sphere.002/Sphere.002_MeshPart0
+        weight: 1
+      - path: Sphere.002/Sphere.002_MeshPart1
+        weight: 1
+      - path: Sphere.003
+        weight: 1
+      - path: Sphere.003/Sphere.003_MeshPart0
+        weight: 1
+      - path: Sphere.003/Sphere.003_MeshPart1
+        weight: 1
+      - path: Torus
+        weight: 1
+      - path: Torus.001
+        weight: 1
+      - path: Torus.002
+        weight: 1
+      - path: Torus.003
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm-03.001.002
+      takeName: Armature.003|Armature.001Action.002
+      firstFrame: 0
+      lastFrame: 99
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/Bone_end 3
+        weight: 1
+      - path: Armature.001
+        weight: 1
+      - path: Armature.001/Bone 1
+        weight: 1
+      - path: Armature.001/Bone 1/Bone_end
+        weight: 1
+      - path: Armature.002
+        weight: 1
+      - path: Armature.002/Bone 2
+        weight: 1
+      - path: Armature.002/Bone 2/Bone_end 1
+        weight: 1
+      - path: Armature.003
+        weight: 1
+      - path: Armature.003/Bone 3
+        weight: 1
+      - path: Armature.003/Bone 3/Bone_end 2
+        weight: 1
+      - path: Body.000
+        weight: 1
+      - path: Body.001
+        weight: 1
+      - path: Body.002
+        weight: 1
+      - path: Body.003
+        weight: 1
+      - path: Plane
+        weight: 1
+      - path: Plane.002
+        weight: 1
+      - path: Plane.003
+        weight: 1
+      - path: Sphere.000
+        weight: 1
+      - path: Sphere.000/Sphere.000_MeshPart0
+        weight: 1
+      - path: Sphere.000/Sphere.000_MeshPart1
+        weight: 1
+      - path: Sphere.001
+        weight: 1
+      - path: Sphere.001/Sphere.001_MeshPart0
+        weight: 1
+      - path: Sphere.001/Sphere.001_MeshPart1
+        weight: 1
+      - path: Sphere.002
+        weight: 1
+      - path: Sphere.002/Sphere.002_MeshPart0
+        weight: 1
+      - path: Sphere.002/Sphere.002_MeshPart1
+        weight: 1
+      - path: Sphere.003
+        weight: 1
+      - path: Sphere.003/Sphere.003_MeshPart0
+        weight: 1
+      - path: Sphere.003/Sphere.003_MeshPart1
+        weight: 1
+      - path: Torus
+        weight: 1
+      - path: Torus.001
+        weight: 1
+      - path: Torus.002
+        weight: 1
+      - path: Torus.003
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm-003.arm
+      takeName: Armature.003|ArmatureAction
+      firstFrame: 0
+      lastFrame: 99
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/Bone_end 3
+        weight: 1
+      - path: Armature.001
+        weight: 1
+      - path: Armature.001/Bone 1
+        weight: 1
+      - path: Armature.001/Bone 1/Bone_end
+        weight: 1
+      - path: Armature.002
+        weight: 1
+      - path: Armature.002/Bone 2
+        weight: 1
+      - path: Armature.002/Bone 2/Bone_end 1
+        weight: 1
+      - path: Armature.003
+        weight: 1
+      - path: Armature.003/Bone 3
+        weight: 1
+      - path: Armature.003/Bone 3/Bone_end 2
+        weight: 1
+      - path: Body.000
+        weight: 1
+      - path: Body.001
+        weight: 1
+      - path: Body.002
+        weight: 1
+      - path: Body.003
+        weight: 1
+      - path: Plane
+        weight: 1
+      - path: Plane.002
+        weight: 1
+      - path: Plane.003
+        weight: 1
+      - path: Sphere.000
+        weight: 1
+      - path: Sphere.000/Sphere.000_MeshPart0
+        weight: 1
+      - path: Sphere.000/Sphere.000_MeshPart1
+        weight: 1
+      - path: Sphere.001
+        weight: 1
+      - path: Sphere.001/Sphere.001_MeshPart0
+        weight: 1
+      - path: Sphere.001/Sphere.001_MeshPart1
+        weight: 1
+      - path: Sphere.002
+        weight: 1
+      - path: Sphere.002/Sphere.002_MeshPart0
+        weight: 1
+      - path: Sphere.002/Sphere.002_MeshPart1
+        weight: 1
+      - path: Sphere.003
+        weight: 1
+      - path: Sphere.003/Sphere.003_MeshPart0
+        weight: 1
+      - path: Sphere.003/Sphere.003_MeshPart1
+        weight: 1
+      - path: Torus
+        weight: 1
+      - path: Torus.001
+        weight: 1
+      - path: Torus.002
+        weight: 1
+      - path: Torus.003
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm-03.Arm.002
+      takeName: Armature.003|ArmatureAction.002
+      firstFrame: 0
+      lastFrame: 99
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/Bone_end 3
+        weight: 1
+      - path: Armature.001
+        weight: 1
+      - path: Armature.001/Bone 1
+        weight: 1
+      - path: Armature.001/Bone 1/Bone_end
+        weight: 1
+      - path: Armature.002
+        weight: 1
+      - path: Armature.002/Bone 2
+        weight: 1
+      - path: Armature.002/Bone 2/Bone_end 1
+        weight: 1
+      - path: Armature.003
+        weight: 1
+      - path: Armature.003/Bone 3
+        weight: 1
+      - path: Armature.003/Bone 3/Bone_end 2
+        weight: 1
+      - path: Body.000
+        weight: 1
+      - path: Body.001
+        weight: 1
+      - path: Body.002
+        weight: 1
+      - path: Body.003
+        weight: 1
+      - path: Plane
+        weight: 1
+      - path: Plane.002
+        weight: 1
+      - path: Plane.003
+        weight: 1
+      - path: Sphere.000
+        weight: 1
+      - path: Sphere.000/Sphere.000_MeshPart0
+        weight: 1
+      - path: Sphere.000/Sphere.000_MeshPart1
+        weight: 1
+      - path: Sphere.001
+        weight: 1
+      - path: Sphere.001/Sphere.001_MeshPart0
+        weight: 1
+      - path: Sphere.001/Sphere.001_MeshPart1
+        weight: 1
+      - path: Sphere.002
+        weight: 1
+      - path: Sphere.002/Sphere.002_MeshPart0
+        weight: 1
+      - path: Sphere.002/Sphere.002_MeshPart1
+        weight: 1
+      - path: Sphere.003
+        weight: 1
+      - path: Sphere.003/Sphere.003_MeshPart0
+        weight: 1
+      - path: Sphere.003/Sphere.003_MeshPart1
+        weight: 1
+      - path: Torus
+        weight: 1
+      - path: Torus.001
+        weight: 1
+      - path: Torus.002
+        weight: 1
+      - path: Torus.003
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm-01.001.001
+      takeName: Armature.001|Armature.001Action.001
+      firstFrame: 0
+      lastFrame: 99
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/Bone_end 3
+        weight: 1
+      - path: Armature.001
+        weight: 1
+      - path: Armature.001/Bone 1
+        weight: 1
+      - path: Armature.001/Bone 1/Bone_end
+        weight: 1
+      - path: Armature.002
+        weight: 1
+      - path: Armature.002/Bone 2
+        weight: 1
+      - path: Armature.002/Bone 2/Bone_end 1
+        weight: 1
+      - path: Armature.003
+        weight: 1
+      - path: Armature.003/Bone 3
+        weight: 1
+      - path: Armature.003/Bone 3/Bone_end 2
+        weight: 1
+      - path: Body.000
+        weight: 1
+      - path: Body.001
+        weight: 1
+      - path: Body.002
+        weight: 1
+      - path: Body.003
+        weight: 1
+      - path: Plane
+        weight: 1
+      - path: Plane.002
+        weight: 1
+      - path: Plane.003
+        weight: 1
+      - path: Sphere.000
+        weight: 1
+      - path: Sphere.000/Sphere.000_MeshPart0
+        weight: 1
+      - path: Sphere.000/Sphere.000_MeshPart1
+        weight: 1
+      - path: Sphere.001
+        weight: 1
+      - path: Sphere.001/Sphere.001_MeshPart0
+        weight: 1
+      - path: Sphere.001/Sphere.001_MeshPart1
+        weight: 1
+      - path: Sphere.002
+        weight: 1
+      - path: Sphere.002/Sphere.002_MeshPart0
+        weight: 1
+      - path: Sphere.002/Sphere.002_MeshPart1
+        weight: 1
+      - path: Sphere.003
+        weight: 1
+      - path: Sphere.003/Sphere.003_MeshPart0
+        weight: 1
+      - path: Sphere.003/Sphere.003_MeshPart1
+        weight: 1
+      - path: Torus
+        weight: 1
+      - path: Torus.001
+        weight: 1
+      - path: Torus.002
+        weight: 1
+      - path: Torus.003
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm-01.001.002
+      takeName: Armature.001|Armature.001Action.002
+      firstFrame: 0
+      lastFrame: 99
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/Bone_end 3
+        weight: 1
+      - path: Armature.001
+        weight: 1
+      - path: Armature.001/Bone 1
+        weight: 1
+      - path: Armature.001/Bone 1/Bone_end
+        weight: 1
+      - path: Armature.002
+        weight: 1
+      - path: Armature.002/Bone 2
+        weight: 1
+      - path: Armature.002/Bone 2/Bone_end 1
+        weight: 1
+      - path: Armature.003
+        weight: 1
+      - path: Armature.003/Bone 3
+        weight: 1
+      - path: Armature.003/Bone 3/Bone_end 2
+        weight: 1
+      - path: Body.000
+        weight: 1
+      - path: Body.001
+        weight: 1
+      - path: Body.002
+        weight: 1
+      - path: Body.003
+        weight: 1
+      - path: Plane
+        weight: 1
+      - path: Plane.002
+        weight: 1
+      - path: Plane.003
+        weight: 1
+      - path: Sphere.000
+        weight: 1
+      - path: Sphere.000/Sphere.000_MeshPart0
+        weight: 1
+      - path: Sphere.000/Sphere.000_MeshPart1
+        weight: 1
+      - path: Sphere.001
+        weight: 1
+      - path: Sphere.001/Sphere.001_MeshPart0
+        weight: 1
+      - path: Sphere.001/Sphere.001_MeshPart1
+        weight: 1
+      - path: Sphere.002
+        weight: 1
+      - path: Sphere.002/Sphere.002_MeshPart0
+        weight: 1
+      - path: Sphere.002/Sphere.002_MeshPart1
+        weight: 1
+      - path: Sphere.003
+        weight: 1
+      - path: Sphere.003/Sphere.003_MeshPart0
+        weight: 1
+      - path: Sphere.003/Sphere.003_MeshPart1
+        weight: 1
+      - path: Torus
+        weight: 1
+      - path: Torus.001
+        weight: 1
+      - path: Torus.002
+        weight: 1
+      - path: Torus.003
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm-01.Arm
+      takeName: Armature.001|ArmatureAction
+      firstFrame: 0
+      lastFrame: 99
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/Bone_end 3
+        weight: 1
+      - path: Armature.001
+        weight: 1
+      - path: Armature.001/Bone 1
+        weight: 1
+      - path: Armature.001/Bone 1/Bone_end
+        weight: 1
+      - path: Armature.002
+        weight: 1
+      - path: Armature.002/Bone 2
+        weight: 1
+      - path: Armature.002/Bone 2/Bone_end 1
+        weight: 1
+      - path: Armature.003
+        weight: 1
+      - path: Armature.003/Bone 3
+        weight: 1
+      - path: Armature.003/Bone 3/Bone_end 2
+        weight: 1
+      - path: Body.000
+        weight: 1
+      - path: Body.001
+        weight: 1
+      - path: Body.002
+        weight: 1
+      - path: Body.003
+        weight: 1
+      - path: Plane
+        weight: 1
+      - path: Plane.002
+        weight: 1
+      - path: Plane.003
+        weight: 1
+      - path: Sphere.000
+        weight: 1
+      - path: Sphere.000/Sphere.000_MeshPart0
+        weight: 1
+      - path: Sphere.000/Sphere.000_MeshPart1
+        weight: 1
+      - path: Sphere.001
+        weight: 1
+      - path: Sphere.001/Sphere.001_MeshPart0
+        weight: 1
+      - path: Sphere.001/Sphere.001_MeshPart1
+        weight: 1
+      - path: Sphere.002
+        weight: 1
+      - path: Sphere.002/Sphere.002_MeshPart0
+        weight: 1
+      - path: Sphere.002/Sphere.002_MeshPart1
+        weight: 1
+      - path: Sphere.003
+        weight: 1
+      - path: Sphere.003/Sphere.003_MeshPart0
+        weight: 1
+      - path: Sphere.003/Sphere.003_MeshPart1
+        weight: 1
+      - path: Torus
+        weight: 1
+      - path: Torus.001
+        weight: 1
+      - path: Torus.002
+        weight: 1
+      - path: Torus.003
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm-01.Arm.002
+      takeName: Armature.001|ArmatureAction.002
+      firstFrame: 0
+      lastFrame: 99
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/Bone_end 3
+        weight: 1
+      - path: Armature.001
+        weight: 1
+      - path: Armature.001/Bone 1
+        weight: 1
+      - path: Armature.001/Bone 1/Bone_end
+        weight: 1
+      - path: Armature.002
+        weight: 1
+      - path: Armature.002/Bone 2
+        weight: 1
+      - path: Armature.002/Bone 2/Bone_end 1
+        weight: 1
+      - path: Armature.003
+        weight: 1
+      - path: Armature.003/Bone 3
+        weight: 1
+      - path: Armature.003/Bone 3/Bone_end 2
+        weight: 1
+      - path: Body.000
+        weight: 1
+      - path: Body.001
+        weight: 1
+      - path: Body.002
+        weight: 1
+      - path: Body.003
+        weight: 1
+      - path: Plane
+        weight: 1
+      - path: Plane.002
+        weight: 1
+      - path: Plane.003
+        weight: 1
+      - path: Sphere.000
+        weight: 1
+      - path: Sphere.000/Sphere.000_MeshPart0
+        weight: 1
+      - path: Sphere.000/Sphere.000_MeshPart1
+        weight: 1
+      - path: Sphere.001
+        weight: 1
+      - path: Sphere.001/Sphere.001_MeshPart0
+        weight: 1
+      - path: Sphere.001/Sphere.001_MeshPart1
+        weight: 1
+      - path: Sphere.002
+        weight: 1
+      - path: Sphere.002/Sphere.002_MeshPart0
+        weight: 1
+      - path: Sphere.002/Sphere.002_MeshPart1
+        weight: 1
+      - path: Sphere.003
+        weight: 1
+      - path: Sphere.003/Sphere.003_MeshPart0
+        weight: 1
+      - path: Sphere.003/Sphere.003_MeshPart1
+        weight: 1
+      - path: Torus
+        weight: 1
+      - path: Torus.001
+        weight: 1
+      - path: Torus.002
+        weight: 1
+      - path: Torus.003
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm-01.001.001
+      takeName: Armature.002|Armature.001Action.001
+      firstFrame: 0
+      lastFrame: 99
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/Bone_end 3
+        weight: 1
+      - path: Armature.001
+        weight: 1
+      - path: Armature.001/Bone 1
+        weight: 1
+      - path: Armature.001/Bone 1/Bone_end
+        weight: 1
+      - path: Armature.002
+        weight: 1
+      - path: Armature.002/Bone 2
+        weight: 1
+      - path: Armature.002/Bone 2/Bone_end 1
+        weight: 1
+      - path: Armature.003
+        weight: 1
+      - path: Armature.003/Bone 3
+        weight: 1
+      - path: Armature.003/Bone 3/Bone_end 2
+        weight: 1
+      - path: Body.000
+        weight: 1
+      - path: Body.001
+        weight: 1
+      - path: Body.002
+        weight: 1
+      - path: Body.003
+        weight: 1
+      - path: Plane
+        weight: 1
+      - path: Plane.002
+        weight: 1
+      - path: Plane.003
+        weight: 1
+      - path: Sphere.000
+        weight: 1
+      - path: Sphere.000/Sphere.000_MeshPart0
+        weight: 1
+      - path: Sphere.000/Sphere.000_MeshPart1
+        weight: 1
+      - path: Sphere.001
+        weight: 1
+      - path: Sphere.001/Sphere.001_MeshPart0
+        weight: 1
+      - path: Sphere.001/Sphere.001_MeshPart1
+        weight: 1
+      - path: Sphere.002
+        weight: 1
+      - path: Sphere.002/Sphere.002_MeshPart0
+        weight: 1
+      - path: Sphere.002/Sphere.002_MeshPart1
+        weight: 1
+      - path: Sphere.003
+        weight: 1
+      - path: Sphere.003/Sphere.003_MeshPart0
+        weight: 1
+      - path: Sphere.003/Sphere.003_MeshPart1
+        weight: 1
+      - path: Torus
+        weight: 1
+      - path: Torus.001
+        weight: 1
+      - path: Torus.002
+        weight: 1
+      - path: Torus.003
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm-02.001.002
+      takeName: Armature.002|Armature.001Action.002
+      firstFrame: 0
+      lastFrame: 99
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/Bone_end 3
+        weight: 1
+      - path: Armature.001
+        weight: 1
+      - path: Armature.001/Bone 1
+        weight: 1
+      - path: Armature.001/Bone 1/Bone_end
+        weight: 1
+      - path: Armature.002
+        weight: 1
+      - path: Armature.002/Bone 2
+        weight: 1
+      - path: Armature.002/Bone 2/Bone_end 1
+        weight: 1
+      - path: Armature.003
+        weight: 1
+      - path: Armature.003/Bone 3
+        weight: 1
+      - path: Armature.003/Bone 3/Bone_end 2
+        weight: 1
+      - path: Body.000
+        weight: 1
+      - path: Body.001
+        weight: 1
+      - path: Body.002
+        weight: 1
+      - path: Body.003
+        weight: 1
+      - path: Plane
+        weight: 1
+      - path: Plane.002
+        weight: 1
+      - path: Plane.003
+        weight: 1
+      - path: Sphere.000
+        weight: 1
+      - path: Sphere.000/Sphere.000_MeshPart0
+        weight: 1
+      - path: Sphere.000/Sphere.000_MeshPart1
+        weight: 1
+      - path: Sphere.001
+        weight: 1
+      - path: Sphere.001/Sphere.001_MeshPart0
+        weight: 1
+      - path: Sphere.001/Sphere.001_MeshPart1
+        weight: 1
+      - path: Sphere.002
+        weight: 1
+      - path: Sphere.002/Sphere.002_MeshPart0
+        weight: 1
+      - path: Sphere.002/Sphere.002_MeshPart1
+        weight: 1
+      - path: Sphere.003
+        weight: 1
+      - path: Sphere.003/Sphere.003_MeshPart0
+        weight: 1
+      - path: Sphere.003/Sphere.003_MeshPart1
+        weight: 1
+      - path: Torus
+        weight: 1
+      - path: Torus.001
+        weight: 1
+      - path: Torus.002
+        weight: 1
+      - path: Torus.003
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm-002.arm
+      takeName: Armature.002|ArmatureAction
+      firstFrame: 0
+      lastFrame: 99
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/Bone_end 3
+        weight: 1
+      - path: Armature.001
+        weight: 1
+      - path: Armature.001/Bone 1
+        weight: 1
+      - path: Armature.001/Bone 1/Bone_end
+        weight: 1
+      - path: Armature.002
+        weight: 1
+      - path: Armature.002/Bone 2
+        weight: 1
+      - path: Armature.002/Bone 2/Bone_end 1
+        weight: 1
+      - path: Armature.003
+        weight: 1
+      - path: Armature.003/Bone 3
+        weight: 1
+      - path: Armature.003/Bone 3/Bone_end 2
+        weight: 1
+      - path: Body.000
+        weight: 1
+      - path: Body.001
+        weight: 1
+      - path: Body.002
+        weight: 1
+      - path: Body.003
+        weight: 1
+      - path: Plane
+        weight: 1
+      - path: Plane.002
+        weight: 1
+      - path: Plane.003
+        weight: 1
+      - path: Sphere.000
+        weight: 1
+      - path: Sphere.000/Sphere.000_MeshPart0
+        weight: 1
+      - path: Sphere.000/Sphere.000_MeshPart1
+        weight: 1
+      - path: Sphere.001
+        weight: 1
+      - path: Sphere.001/Sphere.001_MeshPart0
+        weight: 1
+      - path: Sphere.001/Sphere.001_MeshPart1
+        weight: 1
+      - path: Sphere.002
+        weight: 1
+      - path: Sphere.002/Sphere.002_MeshPart0
+        weight: 1
+      - path: Sphere.002/Sphere.002_MeshPart1
+        weight: 1
+      - path: Sphere.003
+        weight: 1
+      - path: Sphere.003/Sphere.003_MeshPart0
+        weight: 1
+      - path: Sphere.003/Sphere.003_MeshPart1
+        weight: 1
+      - path: Torus
+        weight: 1
+      - path: Torus.001
+        weight: 1
+      - path: Torus.002
+        weight: 1
+      - path: Torus.003
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm-002.arm.002
+      takeName: Armature.002|ArmatureAction.002
+      firstFrame: 0
+      lastFrame: 99
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/Bone_end 3
+        weight: 1
+      - path: Armature.001
+        weight: 1
+      - path: Armature.001/Bone 1
+        weight: 1
+      - path: Armature.001/Bone 1/Bone_end
+        weight: 1
+      - path: Armature.002
+        weight: 1
+      - path: Armature.002/Bone 2
+        weight: 1
+      - path: Armature.002/Bone 2/Bone_end 1
+        weight: 1
+      - path: Armature.003
+        weight: 1
+      - path: Armature.003/Bone 3
+        weight: 1
+      - path: Armature.003/Bone 3/Bone_end 2
+        weight: 1
+      - path: Body.000
+        weight: 1
+      - path: Body.001
+        weight: 1
+      - path: Body.002
+        weight: 1
+      - path: Body.003
+        weight: 1
+      - path: Plane
+        weight: 1
+      - path: Plane.002
+        weight: 1
+      - path: Plane.003
+        weight: 1
+      - path: Sphere.000
+        weight: 1
+      - path: Sphere.000/Sphere.000_MeshPart0
+        weight: 1
+      - path: Sphere.000/Sphere.000_MeshPart1
+        weight: 1
+      - path: Sphere.001
+        weight: 1
+      - path: Sphere.001/Sphere.001_MeshPart0
+        weight: 1
+      - path: Sphere.001/Sphere.001_MeshPart1
+        weight: 1
+      - path: Sphere.002
+        weight: 1
+      - path: Sphere.002/Sphere.002_MeshPart0
+        weight: 1
+      - path: Sphere.002/Sphere.002_MeshPart1
+        weight: 1
+      - path: Sphere.003
+        weight: 1
+      - path: Sphere.003/Sphere.003_MeshPart0
+        weight: 1
+      - path: Sphere.003/Sphere.003_MeshPart1
+        weight: 1
+      - path: Torus
+        weight: 1
+      - path: Torus.001
+        weight: 1
+      - path: Torus.002
+        weight: 1
+      - path: Torus.003
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm.001.001
+      takeName: Armature|Armature.001Action.001
+      firstFrame: 0
+      lastFrame: 99
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/Bone_end 3
+        weight: 1
+      - path: Armature.001
+        weight: 1
+      - path: Armature.001/Bone 1
+        weight: 1
+      - path: Armature.001/Bone 1/Bone_end
+        weight: 1
+      - path: Armature.002
+        weight: 1
+      - path: Armature.002/Bone 2
+        weight: 1
+      - path: Armature.002/Bone 2/Bone_end 1
+        weight: 1
+      - path: Armature.003
+        weight: 1
+      - path: Armature.003/Bone 3
+        weight: 1
+      - path: Armature.003/Bone 3/Bone_end 2
+        weight: 1
+      - path: Body.000
+        weight: 1
+      - path: Body.001
+        weight: 1
+      - path: Body.002
+        weight: 1
+      - path: Body.003
+        weight: 1
+      - path: Plane
+        weight: 1
+      - path: Plane.002
+        weight: 1
+      - path: Plane.003
+        weight: 1
+      - path: Sphere.000
+        weight: 1
+      - path: Sphere.000/Sphere.000_MeshPart0
+        weight: 1
+      - path: Sphere.000/Sphere.000_MeshPart1
+        weight: 1
+      - path: Sphere.001
+        weight: 1
+      - path: Sphere.001/Sphere.001_MeshPart0
+        weight: 1
+      - path: Sphere.001/Sphere.001_MeshPart1
+        weight: 1
+      - path: Sphere.002
+        weight: 1
+      - path: Sphere.002/Sphere.002_MeshPart0
+        weight: 1
+      - path: Sphere.002/Sphere.002_MeshPart1
+        weight: 1
+      - path: Sphere.003
+        weight: 1
+      - path: Sphere.003/Sphere.003_MeshPart0
+        weight: 1
+      - path: Sphere.003/Sphere.003_MeshPart1
+        weight: 1
+      - path: Torus
+        weight: 1
+      - path: Torus.001
+        weight: 1
+      - path: Torus.002
+        weight: 1
+      - path: Torus.003
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm.001.001
+      takeName: Armature|Armature.001Action.002
+      firstFrame: 0
+      lastFrame: 99
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/Bone_end 3
+        weight: 1
+      - path: Armature.001
+        weight: 1
+      - path: Armature.001/Bone 1
+        weight: 1
+      - path: Armature.001/Bone 1/Bone_end
+        weight: 1
+      - path: Armature.002
+        weight: 1
+      - path: Armature.002/Bone 2
+        weight: 1
+      - path: Armature.002/Bone 2/Bone_end 1
+        weight: 1
+      - path: Armature.003
+        weight: 1
+      - path: Armature.003/Bone 3
+        weight: 1
+      - path: Armature.003/Bone 3/Bone_end 2
+        weight: 1
+      - path: Body.000
+        weight: 1
+      - path: Body.001
+        weight: 1
+      - path: Body.002
+        weight: 1
+      - path: Body.003
+        weight: 1
+      - path: Plane
+        weight: 1
+      - path: Plane.002
+        weight: 1
+      - path: Plane.003
+        weight: 1
+      - path: Sphere.000
+        weight: 1
+      - path: Sphere.000/Sphere.000_MeshPart0
+        weight: 1
+      - path: Sphere.000/Sphere.000_MeshPart1
+        weight: 1
+      - path: Sphere.001
+        weight: 1
+      - path: Sphere.001/Sphere.001_MeshPart0
+        weight: 1
+      - path: Sphere.001/Sphere.001_MeshPart1
+        weight: 1
+      - path: Sphere.002
+        weight: 1
+      - path: Sphere.002/Sphere.002_MeshPart0
+        weight: 1
+      - path: Sphere.002/Sphere.002_MeshPart1
+        weight: 1
+      - path: Sphere.003
+        weight: 1
+      - path: Sphere.003/Sphere.003_MeshPart0
+        weight: 1
+      - path: Sphere.003/Sphere.003_MeshPart1
+        weight: 1
+      - path: Torus
+        weight: 1
+      - path: Torus.001
+        weight: 1
+      - path: Torus.002
+        weight: 1
+      - path: Torus.003
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm.arm
+      takeName: Armature|ArmatureAction
+      firstFrame: 0
+      lastFrame: 99
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/Bone_end 3
+        weight: 1
+      - path: Armature.001
+        weight: 1
+      - path: Armature.001/Bone 1
+        weight: 1
+      - path: Armature.001/Bone 1/Bone_end
+        weight: 1
+      - path: Armature.002
+        weight: 1
+      - path: Armature.002/Bone 2
+        weight: 1
+      - path: Armature.002/Bone 2/Bone_end 1
+        weight: 1
+      - path: Armature.003
+        weight: 1
+      - path: Armature.003/Bone 3
+        weight: 1
+      - path: Armature.003/Bone 3/Bone_end 2
+        weight: 1
+      - path: Body.000
+        weight: 1
+      - path: Body.001
+        weight: 1
+      - path: Body.002
+        weight: 1
+      - path: Body.003
+        weight: 1
+      - path: Plane
+        weight: 1
+      - path: Plane.002
+        weight: 1
+      - path: Plane.003
+        weight: 1
+      - path: Sphere.000
+        weight: 1
+      - path: Sphere.000/Sphere.000_MeshPart0
+        weight: 1
+      - path: Sphere.000/Sphere.000_MeshPart1
+        weight: 1
+      - path: Sphere.001
+        weight: 1
+      - path: Sphere.001/Sphere.001_MeshPart0
+        weight: 1
+      - path: Sphere.001/Sphere.001_MeshPart1
+        weight: 1
+      - path: Sphere.002
+        weight: 1
+      - path: Sphere.002/Sphere.002_MeshPart0
+        weight: 1
+      - path: Sphere.002/Sphere.002_MeshPart1
+        weight: 1
+      - path: Sphere.003
+        weight: 1
+      - path: Sphere.003/Sphere.003_MeshPart0
+        weight: 1
+      - path: Sphere.003/Sphere.003_MeshPart1
+        weight: 1
+      - path: Torus
+        weight: 1
+      - path: Torus.001
+        weight: 1
+      - path: Torus.002
+        weight: 1
+      - path: Torus.003
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arm.arm.002
+      takeName: Armature|ArmatureAction.002
+      firstFrame: 0
+      lastFrame: 99
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/Bone_end 3
+        weight: 1
+      - path: Armature.001
+        weight: 1
+      - path: Armature.001/Bone 1
+        weight: 1
+      - path: Armature.001/Bone 1/Bone_end
+        weight: 1
+      - path: Armature.002
+        weight: 1
+      - path: Armature.002/Bone 2
+        weight: 1
+      - path: Armature.002/Bone 2/Bone_end 1
+        weight: 1
+      - path: Armature.003
+        weight: 1
+      - path: Armature.003/Bone 3
+        weight: 1
+      - path: Armature.003/Bone 3/Bone_end 2
+        weight: 1
+      - path: Body.000
+        weight: 1
+      - path: Body.001
+        weight: 1
+      - path: Body.002
+        weight: 1
+      - path: Body.003
+        weight: 1
+      - path: Plane
+        weight: 1
+      - path: Plane.002
+        weight: 1
+      - path: Plane.003
+        weight: 1
+      - path: Sphere.000
+        weight: 1
+      - path: Sphere.000/Sphere.000_MeshPart0
+        weight: 1
+      - path: Sphere.000/Sphere.000_MeshPart1
+        weight: 1
+      - path: Sphere.001
+        weight: 1
+      - path: Sphere.001/Sphere.001_MeshPart0
+        weight: 1
+      - path: Sphere.001/Sphere.001_MeshPart1
+        weight: 1
+      - path: Sphere.002
+        weight: 1
+      - path: Sphere.002/Sphere.002_MeshPart0
+        weight: 1
+      - path: Sphere.002/Sphere.002_MeshPart1
+        weight: 1
+      - path: Sphere.003
+        weight: 1
+      - path: Sphere.003/Sphere.003_MeshPart0
+        weight: 1
+      - path: Sphere.003/Sphere.003_MeshPart1
+        weight: 1
+      - path: Torus
+        weight: 1
+      - path: Torus.001
+        weight: 1
+      - path: Torus.002
+        weight: 1
+      - path: Torus.003
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
