@@ -104,6 +104,11 @@ public class PlayerBehaviour : MonoBehaviour {
             movement.jumpSpeed = 0;
             GetComponent<Animator>().SetBool("Midair", false);
         }
+
+        if (col.collider.tag == "Ball")
+        {
+            Kill();
+        }
     }
 
 
