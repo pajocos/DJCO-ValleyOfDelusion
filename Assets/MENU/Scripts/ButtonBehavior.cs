@@ -8,8 +8,10 @@ public class ButtonBehavior : MonoBehaviour
     private float diff_buttons;
     private float diff_title;
     private float diff_history;
+    private float diff_logo;
 
     public Transform title;
+    public Transform logo;
     public Transform buttons;
     public Transform history;
     public Transform credits;
@@ -22,6 +24,7 @@ public class ButtonBehavior : MonoBehaviour
     private Vector3 originalPosButtons;
     private Vector3 originalPosTitle;
     private Vector3 originalPosHistory;
+    private Vector3 originalPosLogo;
 
     public AudioSource backgroundMusic;
 
@@ -32,6 +35,7 @@ public class ButtonBehavior : MonoBehaviour
     {
         diff_buttons = Screen.width*0.175f;
         diff_title = Screen.height*0.20f + title.position.y;
+        diff_logo = Screen.height * 0.20f + logo.position.y;
         diff_history = Screen.width*0.66f;
 
         restorePos = false;
@@ -41,6 +45,7 @@ public class ButtonBehavior : MonoBehaviour
 
         originalPosButtons = buttons.transform.position;
         originalPosTitle = title.transform.position;
+        originalPosLogo = logo.transform.position;
         originalPosHistory = history.transform.position;
 
         EventSystem.current.SetSelectedGameObject(null);
@@ -54,6 +59,7 @@ public class ButtonBehavior : MonoBehaviour
         buttons.position = Vector3.Lerp(buttons.position, new Vector3(diff_buttons, buttons.position.y, 0),
             Time.deltaTime*1.5f);
         title.position = Vector3.Lerp(title.position, new Vector3(title.position.x, diff_title, 0), Time.deltaTime*1.5f);
+        logo.position = Vector3.Lerp(logo.position, new Vector3(logo.position.x, diff_logo, 0), Time.deltaTime * 1.5f);
     }
 
     void MoveHistory()
@@ -82,6 +88,7 @@ public class ButtonBehavior : MonoBehaviour
     {
         buttons.position = Vector3.Lerp(buttons.position, originalPosButtons, Time.deltaTime*1.5f);
         title.position = Vector3.Lerp(title.position, originalPosTitle, Time.deltaTime*1.5f);
+        logo.position = Vector3.Lerp(logo.position, originalPosLogo, Time.deltaTime * 1.5f);
         history.position = Vector3.Lerp(history.position, originalPosHistory, Time.deltaTime*2f);
         credits.position = Vector3.Lerp(credits.position, originalPosHistory, Time.deltaTime*2f);
     }
