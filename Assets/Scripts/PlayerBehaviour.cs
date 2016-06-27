@@ -86,6 +86,15 @@ public class PlayerBehaviour : MonoBehaviour {
         }
     }
 
+    IEnumerator delayWrapper(Collision col, float delayTime)
+    {
+        yield return new WaitForSeconds(delayTime);
+
+
+        col.collider.GetComponentInParent<SphereCollider>().enabled = false;
+        col.collider.GetComponentInParent<MeshRenderer>().enabled = false;
+    }
+
 
     void OnCollisionEnter(Collision col) {
         if (col.collider.tag == "Gem") {
@@ -93,13 +102,14 @@ public class PlayerBehaviour : MonoBehaviour {
 
             Debug.Log(gems);
 
-            col.collider.GetComponentInParent<SphereCollider>().enabled = false;
-            col.collider.GetComponentInParent<MeshRenderer>().enabled = false;
 
             GetComponent<Animator>().SetTrigger("Capture");
             musicManager.GemSound();
 
             canvasGems[(gems - 1)].enabled = true;
+            float t = 0;
+            print(t);
+            StartCoroutine(delayWrapper(col,0.5f));
         }
 
         if (col.collider.tag == "Floor") {
