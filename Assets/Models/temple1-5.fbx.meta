@@ -1,42 +1,35 @@
 fileFormatVersion: 2
-guid: 6e86113e5e8dc5b4abbf7aa73d786da8
-timeCreated: 1467042405
+guid: bfb2ac07fe0be57469bbdd0c757e79da
+timeCreated: 1467048827
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Body
-    100002: Cube
-    100004: Cube.001
-    100006: Cube.002
-    100008: Cube.003
-    100010: //RootNode
-    100012: Stairs
-    400000: Body
-    400002: Cube
-    400004: Cube.001
-    400006: Cube.002
-    400008: Cube.003
-    400010: //RootNode
-    400012: Stairs
-    2300000: Body
-    2300002: Cube
-    2300004: Cube.001
-    2300006: Cube.002
-    2300008: Cube.003
-    2300010: Stairs
-    3300000: Body
-    3300002: Cube
-    3300004: Cube.001
-    3300006: Cube.002
-    3300008: Cube.003
-    3300010: Stairs
-    4300000: Cube.003
-    4300002: Stairs
-    4300004: Body
-    4300006: Cube
-    4300008: Cube.001
-    4300010: Cube.002
+    100000: temple
+    100002: //RootNode
+    100004: zigzag 00
+    100006: zigzag 01
+    100008: zigzag 02
+    400000: temple
+    400002: //RootNode
+    400004: zigzag 00
+    400006: zigzag 01
+    400008: zigzag 02
+    2300000: temple
+    2300002: //RootNode
+    2300004: zigzag 00
+    2300006: zigzag 01
+    2300008: zigzag 02
+    3300000: temple
+    3300002: //RootNode
+    3300004: zigzag 00
+    3300006: zigzag 01
+    3300008: zigzag 02
+    4300000: piramyd hat
+    4300002: temple
+    4300004: zigzag 02
+    4300006: zigzag 01
+    4300008: zigzag 00
   materials:
     importMaterials: 1
     materialName: 0
