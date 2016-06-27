@@ -166,6 +166,8 @@ public class PlayerBehaviour : MonoBehaviour {
     public void Kill() {
         alive = false;
         musicManager.DefeatSound();
+        GetComponent<Animator>().SetTrigger("Death");
+
     }
     public void StepSound(string ident) {
         musicManager.StepSound(ident);
