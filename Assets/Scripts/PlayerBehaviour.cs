@@ -103,6 +103,7 @@ public class PlayerBehaviour : MonoBehaviour {
             movement.grounded = true;
             movement.jumpSpeed = 0;
             GetComponent<Animator>().SetBool("Midair", false);
+            GetComponent<Animator>().SetTrigger("Land");
         }
 
         if (col.collider.tag == "Ball")
@@ -124,7 +125,6 @@ public class PlayerBehaviour : MonoBehaviour {
     void OnCollisionExit(Collision col) {
         if (col.collider.tag == "Floor") {
             movement.grounded = false;
-            GetComponent<Animator>().SetBool("Midair", true);
 
         }
     }

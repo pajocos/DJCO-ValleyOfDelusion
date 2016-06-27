@@ -92,6 +92,8 @@ public class CharacterMovement : MonoBehaviour {
         if (jump && grounded && canJump) {
             jumpSpeed = JumpImpulsion;
             GetComponent<Animator>().SetTrigger("Jump");
+
+            GetComponent<Animator>().ResetTrigger("Land");
         } else if (!grounded) {
             jumpSpeed -= Gravity * Time.deltaTime;
         }
