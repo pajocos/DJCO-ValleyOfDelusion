@@ -1,0 +1,155 @@
+fileFormatVersion: 2
+guid: 2a26c808fff98484eb377b61794f7ab8
+timeCreated: 1467055252
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Body
+    100002: Cone.000
+    100004: Cone.001
+    100006: Cone.002
+    100008: Cone.003
+    100010: Cube
+    100012: Cube.001
+    100014: Cube.002
+    100016: Cube.003
+    100018: Cube.004
+    100020: Cube.005
+    100022: Cube.006
+    100024: Cube.007
+    100026: //RootNode
+    100028: Plane
+    100030: Plane_MeshPart0
+    100032: Plane_MeshPart1
+    100034: Stairs
+    400000: Body
+    400002: Cone.000
+    400004: Cone.001
+    400006: Cone.002
+    400008: Cone.003
+    400010: Cube
+    400012: Cube.001
+    400014: Cube.002
+    400016: Cube.003
+    400018: Cube.004
+    400020: Cube.005
+    400022: Cube.006
+    400024: Cube.007
+    400026: //RootNode
+    400028: Plane
+    400030: Plane_MeshPart0
+    400032: Plane_MeshPart1
+    400034: Stairs
+    2300000: Body
+    2300002: Cone.000
+    2300004: Cone.001
+    2300006: Cone.002
+    2300008: Cone.003
+    2300010: Cube
+    2300012: Cube.001
+    2300014: Cube.002
+    2300016: Cube.003
+    2300018: Cube.004
+    2300020: Cube.005
+    2300022: Cube.006
+    2300024: Cube.007
+    2300026: Plane_MeshPart0
+    2300028: Plane_MeshPart1
+    2300030: Stairs
+    3300000: Body
+    3300002: Cone.000
+    3300004: Cone.001
+    3300006: Cone.002
+    3300008: Cone.003
+    3300010: Cube
+    3300012: Cube.001
+    3300014: Cube.002
+    3300016: Cube.003
+    3300018: Cube.004
+    3300020: Cube.005
+    3300022: Cube.006
+    3300024: Cube.007
+    3300026: Plane_MeshPart0
+    3300028: Plane_MeshPart1
+    3300030: Stairs
+    4300000: Cube.007
+    4300002: Cone.003
+    4300004: Cone.002
+    4300006: Cube.006
+    4300008: Cube.005
+    4300010: Cone.000
+    4300012: Cube.003
+    4300014: Stairs
+    4300016: Body
+    4300018: Cube
+    4300020: Cube.001
+    4300022: Cube.002
+    4300024: Plane_MeshPart0
+    4300026: Plane_MeshPart1
+    4300028: Cone.001
+    4300030: Cube.004
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

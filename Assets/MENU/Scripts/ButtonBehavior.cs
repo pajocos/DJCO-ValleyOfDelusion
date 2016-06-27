@@ -34,8 +34,8 @@ public class ButtonBehavior : MonoBehaviour
     void Start()
     {
         diff_buttons = Screen.width*0.175f;
-        diff_title = Screen.height*0.20f + title.position.y;
-        diff_logo = Screen.height * 0.20f + logo.position.y;
+        diff_title = Screen.height*0.25f + title.position.y;
+        diff_logo = Screen.height * 0.25f + logo.position.y;
         diff_history = Screen.width*0.66f;
 
         restorePos = false;
