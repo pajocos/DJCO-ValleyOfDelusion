@@ -96,6 +96,9 @@ public class PlayerBehaviour : MonoBehaviour {
             col.collider.GetComponentInParent<SphereCollider>().enabled = false;
             col.collider.GetComponentInParent<MeshRenderer>().enabled = false;
 
+            GetComponent<Animator>().SetTrigger("Capture");
+            musicManager.GemSound();
+
             canvasGems[(gems - 1)].enabled = true;
         }
 
