@@ -1,25 +1,15 @@
 fileFormatVersion: 2
-guid: a1f4b473bdd6e0c4b95baf271a3556e2
-timeCreated: 1466555430
+guid: ec9c266adc548764d99977246b3daf10
+timeCreated: 1467037320
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
-    100002: envelope
-    100004: leaves
     400000: //RootNode
-    400002: envelope
-    400004: leaves
     2300000: //RootNode
-    2300002: envelope
-    2300004: leaves
     3300000: //RootNode
-    3300002: envelope
-    3300004: leaves
-    4300000: tree
-    4300002: leaves
-    4300004: envelope
+    4300000: Cube
   materials:
     importMaterials: 1
     materialName: 0
