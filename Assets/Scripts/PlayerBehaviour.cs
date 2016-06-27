@@ -10,6 +10,9 @@ public class PlayerBehaviour : MonoBehaviour {
     public float dist = 1f;
     public Image[] canvasGems;
 
+    public GameObject portal1;
+    public GameObject portal2;
+
     static public Vector3 StartPosition;
 
     public bool canMove;
@@ -23,7 +26,7 @@ public class PlayerBehaviour : MonoBehaviour {
     // Use this for initialization
     void Start() {
         movement = GetComponent<CharacterMovement>();
-        gems = 0;
+        gems = 5;
         alive = true;
         canMove = true;
 
@@ -152,6 +155,19 @@ public class PlayerBehaviour : MonoBehaviour {
         if(col.tag == "MusicDetector")
         {
             musicManager.changeMusicAndEnvironment(col);
+        }
+        if (col.tag == "CountCristal")
+        {
+            Debug.Log(PlayerBehaviour.gems);
+            if (gems == 5)
+            {
+                portal1.SetActive(true);
+                portal2.SetActive(true);
+            }
+            else
+            {
+                Debug.Log("catch more gems");
+            }
         }
     }
 
