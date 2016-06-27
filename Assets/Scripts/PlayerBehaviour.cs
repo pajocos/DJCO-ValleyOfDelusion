@@ -149,6 +149,10 @@ public class PlayerBehaviour : MonoBehaviour {
         if (col.tag == "Water") {
             Kill();
         }
+        if(col.tag == "MusicDetector")
+        {
+            musicManager.changeMusicAndEnvironment(col);
+        }
     }
 
     public int GetGems() {

@@ -9,7 +9,7 @@ public class PendulumReproducerScript : MonoBehaviour
 
     void Start()
     {
-        sound = gameObject.AddComponent<AudioSource>();
+        sound = GetComponent<AudioSource>();
         
     }
 
