@@ -3,19 +3,25 @@ using System.Collections;
 
 public class PendulumReproducerScript : MonoBehaviour
 {
-
-    private AudioSource pendulumSound;
+    public AudioClip[] PendulumSounds;
+    private AudioSource sound;
+    public float PitchRange = 0.2f;
 
     void Start()
     {
-        pendulumSound = GetComponent<AudioSource>();
+        sound = gameObject.AddComponent<AudioSource>();
+        
     }
 
     void OnTriggerEnter(Collider col)
     {
-        if(col.tag == "MusicDetector" && !pendulumSound.isPlaying)
+        int r = Random.Range(0,PendulumSounds.Length-1);
+        PendulumSounds[r].LoadAudioData();
+        sound.clip = PendulumSounds[r];
+        sound.pitch = 1.0f +(Random.value * 2 * PitchRange) - PitchRange;
+        if(col.tag == "MusicDetector" && !sound.isPlaying)
         {
-            pendulumSound.Play();
+            sound.Play();
         }
     }
 }
