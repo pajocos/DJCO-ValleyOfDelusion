@@ -59,7 +59,8 @@ public class PlayerBehaviour : MonoBehaviour {
             //som de morte
             //mostrar qualquer coisa no ecra
 
-            Invoke("Died", 2);
+            Invoke("Died", 2.5f);
+            return;
         }
         if (Mathf.Abs(movement.jumpSpeed) > MaxJumpSpeed)
             Kill();
@@ -146,8 +147,8 @@ public class PlayerBehaviour : MonoBehaviour {
     }
 
     public void Kill() {
-        print("dead");
         alive = false;
+        musicManager.DefeatSound();
     }
     public void StepSound(string ident) {
         musicManager.StepSound(ident);
