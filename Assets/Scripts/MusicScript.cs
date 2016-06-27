@@ -13,6 +13,9 @@ public class MusicScript : MonoBehaviour {
     public AudioClip[] stone_steps;
     public AudioClip[] stone_run;
     public AudioClip defeat;
+    public AudioClip cristal_capture;
+    
+
     private AudioClip currentStep;
     private int savedIndex = 0;
     public bool background;
@@ -51,6 +54,8 @@ public class MusicScript : MonoBehaviour {
 
     public void StepSound(string ident) {
 
+        if (animationSound.clip == cristal_capture && animationSound.isPlaying)
+            return;
         int vl = (int)(Random.value * stone_steps.Length);
         int vlImp = 1;
         if (vl % 2 == 0) {
@@ -94,5 +99,12 @@ public class MusicScript : MonoBehaviour {
         backgroundMusic.Stop();
         backgroundMusic.clip = defeat;
         backgroundMusic.Play();
+    }
+
+    public void GemSound()
+    {
+        animationSound.Stop();
+        animationSound.clip = cristal_capture;
+        animationSound.Play();
     }
 }
