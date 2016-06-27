@@ -59,7 +59,8 @@ public class PlayerBehaviour : MonoBehaviour {
             //som de morte
             //mostrar qualquer coisa no ecra
 
-            Invoke("Died", 0.2f);
+            Invoke("Died", 2.5f);
+            return;
         }
         if (Mathf.Abs(movement.jumpSpeed) > MaxJumpSpeed)
             Kill();

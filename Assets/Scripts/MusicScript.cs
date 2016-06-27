@@ -92,7 +92,7 @@ public class MusicScript : MonoBehaviour {
     {
         animationSound.Stop();
         backgroundMusic.Stop();
-        animationSound.clip = defeat;
-        animationSound.Play();
+        backgroundMusic.clip = defeat;
+        backgroundMusic.Play();
     }
 }
