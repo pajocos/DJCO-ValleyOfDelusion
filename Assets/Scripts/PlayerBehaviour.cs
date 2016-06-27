@@ -149,6 +149,10 @@ public class PlayerBehaviour : MonoBehaviour {
         if (col.tag == "Water") {
             Kill();
         }
+        if(col.tag == "MusicDetector")
+        {
+            musicManager.changeMusicAndEnvironment(col);
+        }
     }
 
     public int GetGems() {
@@ -162,6 +166,8 @@ public class PlayerBehaviour : MonoBehaviour {
     public void Kill() {
         alive = false;
         musicManager.DefeatSound();
+        GetComponent<Animator>().SetTrigger("Death");
+
     }
     public void StepSound(string ident) {
         musicManager.StepSound(ident);
