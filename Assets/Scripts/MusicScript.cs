@@ -12,6 +12,7 @@ public class MusicScript : MonoBehaviour {
     public AudioClip[] grass_run;
     public AudioClip[] stone_steps;
     public AudioClip[] stone_run;
+    public AudioClip defeat;
     private AudioClip currentStep;
     private int savedIndex = 0;
     public bool background;
@@ -84,6 +85,14 @@ public class MusicScript : MonoBehaviour {
         animationSound.Stop();
         animationSound.clip = currentStep;
         //Debug.Log(currentStep.name);
+        animationSound.Play();
+    }
+
+    public void DefeatSound()
+    {
+        animationSound.Stop();
+        backgroundMusic.Stop();
+        animationSound.clip = defeat;
         animationSound.Play();
     }
 }
