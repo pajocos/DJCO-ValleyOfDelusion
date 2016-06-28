@@ -117,12 +117,14 @@ public class PlayerBehaviour : MonoBehaviour {
 
         if (col.collider.tag == "Floor") {
 
+            if(movement.jumpSpeed > 0.1f)
+                musicManager.LandSound();
+
             movement.grounded = true;
             movement.jumpSpeed = 0;
             GetComponent<Animator>().SetBool("Midair", false);
             GetComponent<Animator>().SetTrigger("Land");
 
-            musicManager.LandSound();
         }
 
         if (col.collider.tag == "Ball")
