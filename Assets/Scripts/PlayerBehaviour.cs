@@ -5,6 +5,7 @@ using System;
 using UnityEngine.SceneManagement;
 
 public class PlayerBehaviour : MonoBehaviour {
+
     public CharacterMovement movement;
     public MusicScript musicManager;
     public float dist = 1f;
@@ -12,6 +13,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
     public GameObject portal1;
     public GameObject portal2;
+    public GameObject gemsUIWarning;
 
     static public Vector3 StartPosition;
 
@@ -167,14 +169,24 @@ public class PlayerBehaviour : MonoBehaviour {
             Debug.Log(PlayerBehaviour.gems);
             if (gems == 5)
             {
+                gemsUIWarning.GetComponentInChildren<Text>().text = "Choose one portal... But choose wisely!";
+                gemsUIWarning.SetActive(true);
+                Invoke("DisableUI" , 4);
                 portal1.SetActive(true);
                 portal2.SetActive(true);
             }
             else
             {
-                Debug.Log("catch more gems");
+                gemsUIWarning.GetComponentInChildren<Text>().text = "You must catch all the gems...";
+                gemsUIWarning.SetActive(true);
+                Invoke("DisableUI", 4);
             }
         }
+    }
+
+    void DisableUI()
+    {
+        gemsUIWarning.SetActive(false);
     }
 
     public int GetGems() {
