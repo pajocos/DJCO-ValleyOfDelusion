@@ -11,32 +11,20 @@ public class RotateAround : MonoBehaviour
     public Renderer body;
     public Renderer masq;
 
-    private Material[] materials;
-    private Color[] original_colors;
+    public Renderer bodyFade;
+    public Renderer masqFade;
+
+
+    private Color original_color_masq;
+    private Color original_color_body;
 
     public float FadeTime = 1f;
     private float tempTime = 0;
 
     void Start()
     {
-        materials = new Material[masq.materials.Length + body.materials.Length];
-
-        for(int i = 0; i < masq.materials.Length + body.materials.Length; i++)
-        {
-            if(i < masq.materials.Length)
-                materials[i] = masq.materials[i];
-            else
-                materials[i] = body.materials[i-masq.materials.Length];
-        }
-
-
-        original_colors = new Color[materials.Length];
-
-        for(int i = 0; i < materials.Length;i++)
-        {
-            original_colors[i] = materials[i].GetColor("_Color");
-            original_colors[i].a = 1;
-        }
+        original_color_masq = masqFade.material.color;
+        original_color_body = bodyFade.material.color;
 
         source.clip = clips[0];
         source.Play();
@@ -61,31 +49,32 @@ public class RotateAround : MonoBehaviour
 
         }
         else if (PlayerBehaviour.gems == 1)
-        {          
+        {
 
-            for (int i = 0; i < materials.Length; i++)
+            if (body.material != bodyFade)
             {
-                
-                Color temp = original_colors[i];
-                temp.a = 0;
+                body.material = bodyFade.material;
+            }
 
-                
-                materials[i].SetFloat("_Mode", 2);
-                materials[i].SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
-                materials[i].SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
-                materials[i].SetInt("_ZWrite", 0);
-                materials[i].DisableKeyword("_ALPHATEST_ON");
-                materials[i].EnableKeyword("_ALPHABLEND_ON");
-                materials[i].DisableKeyword("_ALPHAPREMULTIPLY_ON");
+            if (masq.material != masqFade)
+            {
+                masq.material = masqFade.material;
+            }
 
-                materials[i].SetColor("_Color", Color.Lerp(original_colors[i], temp, tempTime / FadeTime));
-                /*if (materials[i].color.a == 0)
-                {
-                    gameObject.SetActive(false);
-                    enabled = false;
-                }*/
+            Color temp = original_color_body;
+            temp.a = 0;
 
+            body.material.SetColor("_Color", Color.Lerp(original_color_body, temp, tempTime / FadeTime));
 
+            temp = original_color_masq;
+            temp.a = 0;
+
+            masq.material.SetColor("_Color", Color.Lerp(original_color_masq, temp, tempTime / FadeTime));
+
+            if(masq.material.color.a == 0 || body.material.color.a == 0)
+            {
+                gameObject.SetActive(false);
+                enabled = false;
             }
 
             tempTime += Time.deltaTime;
