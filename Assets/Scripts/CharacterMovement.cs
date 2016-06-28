@@ -93,7 +93,6 @@ public class CharacterMovement : MonoBehaviour {
             jumpSpeed = JumpImpulsion;
             GetComponent<Animator>().SetTrigger("Jump");
 
-            GetComponentInChildren<MusicScript>().JumpSound();
             GetComponent<Animator>().ResetTrigger("Land");
         } else if (!grounded) {
             jumpSpeed -= Gravity * Time.deltaTime;

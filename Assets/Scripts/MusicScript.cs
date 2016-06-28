@@ -218,6 +218,7 @@ public class MusicScript : MonoBehaviour
         animationSound.Play();
     }
 
+
     public void JumpSound()
     {
         animationSound.Stop();

@@ -119,12 +119,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
             int layerMask = 1 << 8; //Rock Layer
             musicManager.rock = Physics.Raycast(transform.position, Vector3.down, Mathf.Infinity, layerMask);
-                
-            
-
-            if(movement.jumpSpeed > 0.1f)
-                musicManager.LandSound();
-
+                       
             movement.grounded = true;
             movement.jumpSpeed = 0;
             GetComponent<Animator>().SetBool("Midair", false);
@@ -201,5 +196,14 @@ public class PlayerBehaviour : MonoBehaviour {
     }
 
 
+    public void LandSoundFacade()
+    {
+        musicManager.LandSound();
+    }
+
+    public void JumpSoundFacade()
+    {
+        musicManager.JumpSound();
+    }
 
 }
