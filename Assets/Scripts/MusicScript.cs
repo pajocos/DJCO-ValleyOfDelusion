@@ -105,8 +105,7 @@ public class MusicScript : MonoBehaviour
         int vl = (int)(Random.value * stone_steps.Length);
         int vlImp = 1;
 
-        if(rock)
-                print("#ROCK");
+        print(animationSound.clip);
 
         if (vl % 2 == 0)
         {
@@ -233,5 +232,10 @@ public class MusicScript : MonoBehaviour
             animationSound.clip = stone_jumping[r];
         }
         animationSound.Play();
+    }
+
+    public void StepSoundFacade(string ident)
+    {
+        StepSound(ident);
     }
 }
