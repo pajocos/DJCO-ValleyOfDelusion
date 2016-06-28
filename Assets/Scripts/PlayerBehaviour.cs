@@ -117,6 +117,11 @@ public class PlayerBehaviour : MonoBehaviour {
 
         if (col.collider.tag == "Floor") {
 
+            int layerMask = 1 << 8; //Rock Layer
+            musicManager.rock = Physics.Raycast(transform.position, Vector3.down, Mathf.Infinity, layerMask);
+                
+            
+
             if(movement.jumpSpeed > 0.1f)
                 musicManager.LandSound();
 
@@ -136,6 +141,8 @@ public class PlayerBehaviour : MonoBehaviour {
 
     void OnCollisionStay(Collision col) {
         if (col.collider.tag == "Floor") {
+            int layerMask = 1 << 8; //Rock Layer
+            musicManager.rock = Physics.Raycast(transform.position, Vector3.down, Mathf.Infinity, layerMask);          
 
             movement.grounded = true;
             movement.jumpSpeed = 0;

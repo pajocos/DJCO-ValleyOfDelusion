@@ -29,6 +29,8 @@ public class MusicScript : MonoBehaviour
     private int savedIndex = 0;
     private int envIndex = 0;
     public bool background;
+
+    public bool rock = false;
     // Use this for initialization
     void Awake()
     {
@@ -102,6 +104,10 @@ public class MusicScript : MonoBehaviour
             return;
         int vl = (int)(Random.value * stone_steps.Length);
         int vlImp = 1;
+
+        if(rock)
+                print("#ROCK");
+
         if (vl % 2 == 0)
         {
             vlImp = vl + 1;
@@ -116,11 +122,25 @@ public class MusicScript : MonoBehaviour
 
         if (ident.Equals("LeftFoot"))
         {
-            currentStep = stone_steps[vl];
+            if (rock)
+            {
+                currentStep = stone_steps[vl];
+            }
+            else
+            {
+                currentStep = grass_steps[vl];
+            }
         }
         else if (ident.Equals("RightFoot"))
         {
-            currentStep = stone_steps[vlImp];
+            if (rock)
+            {
+                currentStep = stone_steps[vlImp];
+            }
+            else
+            {
+                currentStep = grass_steps[vlImp];
+            }
         }
         else if (ident.Equals("LeftFootRun"))
         { //TODO isto ta merda
@@ -128,7 +148,15 @@ public class MusicScript : MonoBehaviour
             {
                 return;
             }
-            currentStep = stone_run[vl];
+
+            if (rock)
+            {
+                currentStep = stone_run[vl];
+            }
+            else
+            {
+                currentStep = grass_run[vl];
+            }
         }
         else if (ident.Equals("RightFootRun"))
         {
@@ -137,7 +165,15 @@ public class MusicScript : MonoBehaviour
                 return;
             }
 
-            currentStep = stone_run[vlImp];
+
+            if (rock)
+            {
+                currentStep = stone_run[vlImp];
+            }
+            else
+            {
+                currentStep = grass_run[vlImp];
+            }
 
         }
         else
@@ -168,18 +204,34 @@ public class MusicScript : MonoBehaviour
 
     public void LandSound()
     {
-        int r = Random.Range(0, grass_landing.Length -1);
-
         animationSound.Stop();
-        animationSound.clip = grass_landing[r];
+
+        if (rock)
+        {
+            int r = Random.Range(0, grass_landing.Length - 1);
+            animationSound.clip = grass_landing[r];
+        }
+        else
+        {
+            int r = Random.Range(0, stone_landing.Length - 1);
+            animationSound.clip = stone_landing[r];
+        }
         animationSound.Play();
     }
 
     public void JumpSound()
     {
-        int r = Random.Range(0, grass_jumping.Length - 1);
         animationSound.Stop();
-        animationSound.clip = grass_jumping[r];
+        if (rock)
+        {
+            int r = Random.Range(0, grass_jumping.Length - 1);
+            animationSound.clip = grass_jumping[r];
+        }
+        else
+        {
+            int r = Random.Range(0, stone_jumping.Length - 1);
+            animationSound.clip = stone_jumping[r];
+        }
         animationSound.Play();
     }
 }
