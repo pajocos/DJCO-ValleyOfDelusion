@@ -98,8 +98,7 @@ public class MusicScript : MonoBehaviour
 
     public void StepSound(string ident)
     {
-
-        if ( animationSound.clip != cristal_capture  && animationSound.isPlaying)
+        if (animationSound.clip != cristal_capture  && animationSound.isPlaying)
             return;
         int vl = (int)(Random.value * stone_steps.Length);
         int vlImp = 1;
