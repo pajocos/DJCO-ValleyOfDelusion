@@ -3,11 +3,11 @@ using System.Collections;
 
 public class RotateAround : MonoBehaviour
 {
-    private Renderer renderer;
+    //private Renderer renderer;
 
     void Start()
     {
-        renderer = GetComponent<Renderer>();
+        //renderer = GetComponent<Renderer>();
     }
 
     // Update is called once per frame
