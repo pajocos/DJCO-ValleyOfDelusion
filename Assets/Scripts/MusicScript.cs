@@ -18,6 +18,11 @@ public class MusicScript : MonoBehaviour
     public AudioClip[] stone_run;
     public AudioClip defeat;
     public AudioClip cristal_capture;
+    public AudioClip[] grass_jumping;
+    public AudioClip[] grass_landing;
+    
+    public AudioClip[] stone_jumping;
+    public AudioClip[] stone_landing;
 
 
     private AudioClip currentStep;
@@ -94,7 +99,7 @@ public class MusicScript : MonoBehaviour
     public void StepSound(string ident)
     {
 
-        if (animationSound.clip == cristal_capture && animationSound.isPlaying)
+        if ( animationSound.clip != cristal_capture  && animationSound.isPlaying)
             return;
         int vl = (int)(Random.value * stone_steps.Length);
         int vlImp = 1;
@@ -159,6 +164,23 @@ public class MusicScript : MonoBehaviour
     {
         animationSound.Stop();
         animationSound.clip = cristal_capture;
+        animationSound.Play();
+    }
+
+    public void LandSound()
+    {
+        int r = Random.Range(0, grass_landing.Length -1);
+
+        animationSound.Stop();
+        animationSound.clip = grass_landing[r];
+        animationSound.Play();
+    }
+
+    public void JumpSound()
+    {
+        int r = Random.Range(0, grass_jumping.Length - 1);
+        animationSound.Stop();
+        animationSound.clip = grass_jumping[r];
         animationSound.Play();
     }
 }

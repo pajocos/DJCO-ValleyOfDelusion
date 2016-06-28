@@ -35,15 +35,16 @@ public class MovingEnemyScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Vector3.Distance(transform.position, agent.destination) < 1f)
-        {
-            GoToNextPoint();
-        } 
         if (Vector3.Distance(transform.position, Player.transform.position) < SensePlayer)
         {
             agent.destination = Player.transform.position;
 
         }
+        else if (Vector3.Distance(transform.position, agent.destination) < 1f)
+        {
+            GoToNextPoint();
+        } 
+       
     }
 
     void StepSound(string str) {

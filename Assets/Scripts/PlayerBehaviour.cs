@@ -121,6 +121,8 @@ public class PlayerBehaviour : MonoBehaviour {
             movement.jumpSpeed = 0;
             GetComponent<Animator>().SetBool("Midair", false);
             GetComponent<Animator>().SetTrigger("Land");
+
+            musicManager.LandSound();
         }
 
         if (col.collider.tag == "Ball")
