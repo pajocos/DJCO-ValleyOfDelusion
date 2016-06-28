@@ -12,8 +12,11 @@ public class EnemyWithAttackCollider : MonoBehaviour {
     protected Animator animator;
     private bool attacking = false;
 
-    public float pushDelay=2f;
-    private float pushCountDown = 2f;   
+    public AudioSource AttackSound;
+    public float PitchRange = 0.2f;
+
+    public float pushDelay= 1f;
+    private float pushCountDown = 1f;   
 
     public void PushEnemy()
     {
@@ -21,6 +24,9 @@ public class EnemyWithAttackCollider : MonoBehaviour {
             animator.SetTrigger("Attack");
             currentCooldown = cooldownTime;
             attacking = true;
+            
+            AttackSound.pitch = 1f + Random.Range(-0.2f, 0.2f);
+            AttackSound.Play();
         }
     }
 
@@ -48,11 +54,12 @@ public class EnemyWithAttackCollider : MonoBehaviour {
     {
         if (col.collider.tag == ("Player"))
         {
-            Player.movement.PushBack(10f, transform.forward);
+            Player.movement.PushBack(10f, transform.forward);            
         }
     }
 
     public void TriggerWithPlayer() {
+
         PushEnemy();
     }
 

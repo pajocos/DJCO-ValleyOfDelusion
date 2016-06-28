@@ -38,7 +38,7 @@ public class MovingEnemyScript : MonoBehaviour
         if (Vector3.Distance(transform.position, agent.destination) < 1f)
         {
             GoToNextPoint();
-        } else
+        } 
         if (Vector3.Distance(transform.position, Player.transform.position) < SensePlayer)
         {
             agent.destination = Player.transform.position;
