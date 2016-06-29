@@ -157,14 +157,9 @@ public class PlayerBehaviour : MonoBehaviour {
 
     void OnTriggerEnter(Collider col) {
         if (col.tag == "Water") {
+            musicManager.SplashSound();
             Kill();
         }
-
-        if(col.tag == "Splash")
-        {
-            musicManager.SplashSound();
-        }
-
         if(col.tag == "MusicDetector")
         {
             musicManager.changeMusicAndEnvironment(col);
@@ -204,7 +199,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
     public void Kill() {
         alive = false;
-        musicManager.DefeatSound();
+        musicManager.Invoke("DefeatSound", 0.5f);
         GetComponent<Animator>().SetTrigger("Death");
 
     }
