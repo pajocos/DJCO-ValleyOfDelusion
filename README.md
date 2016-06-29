@@ -14,4 +14,7 @@ Game developed in Unity3D. Check [wiki](https://paginas.fe.up.pt/~ei12019/Valley
 - Beatriz Carvalho
 - Sofia Gonçalves
 
-######Multimédia
+######MM
+- Jorge Monteiro
+- Maria Marques
+- José Barboza
