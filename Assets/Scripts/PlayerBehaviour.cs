@@ -28,7 +28,6 @@ public class PlayerBehaviour : MonoBehaviour {
     // Use this for initialization
     void Start() {
         movement = GetComponent<CharacterMovement>();
-        gems = 0;
         alive = true;
         canMove = true;
 
