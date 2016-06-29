@@ -31,6 +31,9 @@ public class MusicScript : MonoBehaviour
     public bool background;
     private bool firstTimeFinalTemple = true;
 
+    public float runVolume = 0.45f;
+    private float defaultAnimationVolume;
+
     public bool rock = false;
     // Use this for initialization
     void Awake()
@@ -38,6 +41,7 @@ public class MusicScript : MonoBehaviour
         //if (background) {
         //    Invoke("UpdateMusic", audios[savedIndex].length);
         //}        
+        defaultAnimationVolume = animationSound.volume;
     }
 
     // Update is called once per frame
@@ -157,6 +161,8 @@ public class MusicScript : MonoBehaviour
         int vl = (int)(Random.value * stone_steps.Length);
         int vlImp = 1;
 
+        animationSound.volume = defaultAnimationVolume;
+
         print(animationSound.clip);
 
         if (vl % 2 == 0)
@@ -200,6 +206,8 @@ public class MusicScript : MonoBehaviour
                 return;
             }
 
+            animationSound.volume = runVolume;
+
             if (rock)
             {
                 currentStep = stone_run[vl];
@@ -216,6 +224,7 @@ public class MusicScript : MonoBehaviour
                 return;
             }
 
+            animationSound.volume = runVolume;
 
             if (rock)
             {
@@ -232,6 +241,8 @@ public class MusicScript : MonoBehaviour
             Debug.Log("Step error : string identifier from animation event not found");
 
         }
+        
+
         animationSound.Stop();
         animationSound.clip = currentStep;
         //Debug.Log(currentStep.name);
