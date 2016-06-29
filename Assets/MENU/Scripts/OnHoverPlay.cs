@@ -6,17 +6,24 @@ public class OnHoverPlay : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 {
     public AudioSource Audio;
     public Text text;
+    public bool PauseMenu = false;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        text.fontSize = 18;
-        text.color = Color.cyan;
+        if (!PauseMenu)
+        {
+            text.fontSize = 18;
+            text.color = Color.cyan;
+        }
         Audio.Play();
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        text.fontSize = 14;
-        text.color = Color.white;
+        if (!PauseMenu)
+        {
+            text.fontSize = 14;
+            text.color = Color.white;
+        }
     }
 }
