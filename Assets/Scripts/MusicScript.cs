@@ -23,6 +23,7 @@ public class MusicScript : MonoBehaviour
     
     public AudioClip[] stone_jumping;
     public AudioClip[] stone_landing;
+    public AudioClip splashClip;
 
 
     private AudioClip currentStep;
@@ -301,5 +302,15 @@ public class MusicScript : MonoBehaviour
     public void StepSoundFacade(string ident)
     {
         StepSound(ident);
+    }
+
+
+
+    public void SplashSound()
+    {
+        animationSound.Stop();
+        animationSound.clip = splashClip;
+        animationSound.Play();
+        
     }
 }

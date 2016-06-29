@@ -159,6 +159,12 @@ public class PlayerBehaviour : MonoBehaviour {
         if (col.tag == "Water") {
             Kill();
         }
+
+        if(col.tag == "Splash")
+        {
+            musicManager.SplashSound();
+        }
+
         if(col.tag == "MusicDetector")
         {
             musicManager.changeMusicAndEnvironment(col);
