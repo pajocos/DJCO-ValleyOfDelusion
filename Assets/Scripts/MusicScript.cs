@@ -29,6 +29,7 @@ public class MusicScript : MonoBehaviour
     private int savedIndex = 0;
     private int envIndex = 0;
     public bool background;
+    private bool firstTimeFinalTemple = true;
 
     public bool rock = false;
     // Use this for initialization
@@ -80,6 +81,57 @@ public class MusicScript : MonoBehaviour
         if (background && !backgroundMusic.isPlaying)
         {
             backgroundMusic.clip = audios[savedIndex];
+            
+
+            if (audios[savedIndex].name == "Music_Floresta_1")
+            {
+                backgroundMusic.volume = 0.5f;
+            }
+            else if (audios[savedIndex].name == "Music_Floresta_2")
+            {
+                backgroundMusic.volume = 0.805f;
+            }
+            else if (audios[savedIndex].name == "Music_Floresta_3")
+            {
+                backgroundMusic.volume = 0.85f;
+            }
+            else if (audios[savedIndex].name == "Music_Templo_1" )
+            {
+                backgroundMusic.volume = 0.95f;
+
+                if (!firstTimeFinalTemple)
+                {
+                    foreach (AudioClip a in audios)
+                    {
+                        if (a.name == "Music_Templo_2")
+                        {
+                            backgroundMusic.clip = a;
+                        }
+                    }
+
+                }
+                else
+                {
+                    firstTimeFinalTemple = false;
+                }
+            }
+            else if (audios[savedIndex].name == "Music_Templo_2")
+            {
+                backgroundMusic.volume = 0.95f;
+
+                if (firstTimeFinalTemple)
+                {
+                    foreach (AudioClip a in audios)
+                    {
+                        if (a.name == "Music_Templo_1")
+                        {
+                            backgroundMusic.clip = a;
+                        }
+                    }
+                }
+            }
+
+
             backgroundMusic.Play();
             Debug.Log(backgroundMusic.clip.name);
             //Invoke("UpdateMusic", audios[savedIndex].length);
