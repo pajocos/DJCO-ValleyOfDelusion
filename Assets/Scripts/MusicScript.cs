@@ -48,8 +48,8 @@ public class MusicScript : MonoBehaviour
     void Update()
     {
         UpdateMusic();
-        if (environments.Length > 0)
-            UpdateEnvironment();
+        //if (environments.Length > 0)
+        //    UpdateEnvironment();
     }
 
     public void changeMusicAndEnvironment(Collider other)
