@@ -137,8 +137,7 @@ public class MusicScript : MonoBehaviour
         int vlImp = 1;
 
         animationSound.volume = defaultAnimationVolume;
-
-        print(animationSound.clip);
+        
 
         if (vl % 2 == 0)
         {

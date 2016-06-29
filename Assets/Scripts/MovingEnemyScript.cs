@@ -46,8 +46,5 @@ public class MovingEnemyScript : MonoBehaviour
         } 
        
     }
-
-    public void StepSound(string str) {
-        music.StepSound(str);
-    }
+    
 }
