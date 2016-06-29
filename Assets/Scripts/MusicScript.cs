@@ -6,12 +6,9 @@ public class MusicScript : MonoBehaviour
 
 
     public Collider[] triggers;
-    public Collider[] EnvironmentTriggers;
     public AudioClip[] audios;
-    public AudioClip[] environments;
     public AudioSource backgroundMusic;
     public AudioSource animationSound;
-    public AudioSource environmentSounds;
     public AudioClip[] grass_steps;
     public AudioClip[] grass_run;
     public AudioClip[] stone_steps;
@@ -28,7 +25,7 @@ public class MusicScript : MonoBehaviour
 
     private AudioClip currentStep;
     private int savedIndex = 0;
-    private int envIndex = 0;
+
     public bool background;
     private bool firstTimeFinalTemple = true;
 
@@ -49,8 +46,6 @@ public class MusicScript : MonoBehaviour
     void Update()
     {
         UpdateMusic();
-        //if (environments.Length > 0)
-        //    UpdateEnvironment();
     }
 
     public void changeMusicAndEnvironment(Collider other)
@@ -63,16 +58,7 @@ public class MusicScript : MonoBehaviour
                 {
                     savedIndex = i;
                 }
-            }
-
-            for (int i = 0; i < EnvironmentTriggers.Length; i++)
-            {
-                if (EnvironmentTriggers[i] == other)
-                {
-                    envIndex = i;
-                    UpdateEnvironment();
-                }
-            }
+            }           
         }
     }
 
@@ -142,19 +128,7 @@ public class MusicScript : MonoBehaviour
             //Invoke("UpdateMusic", audios[savedIndex].length);
         }
     }
-
-    void UpdateEnvironment()
-    {
-        if (environmentSounds.clip != environments[envIndex] || !environmentSounds.isPlaying)
-        {
-            environmentSounds.clip = environments[envIndex];
-            print(environmentSounds.clip.name);
-            environmentSounds.Play();
-        }
-        //Invoke("UpdateMusic", audios[savedIndex].length);
-
-    }
-
+    
     public void StepSound(string ident)
     {
         if (animationSound.clip != cristal_capture  && animationSound.isPlaying)
